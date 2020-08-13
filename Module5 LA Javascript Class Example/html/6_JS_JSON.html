@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Date        : -->
+<!--Title       : -->
+<!--Description : -->
+<!--Use "Shift" + "Alt" +"F" to justify evething -->
+
+
+<head>
+
+    <title>JS JSON JavaScript Object Notation</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    -->
+
+    <!-- External set up of style-->
+    <link rel="stylesheet" type="text/css" href="#">
+
+    <!-- Internal set up of style-->
+    <style type="text/css">
+
+    </style>
+
+    <!-- External set up of style-->
+    <link rel="stylesheet" type="text/javascript" href="#">
+
+    <!-- Internal set up of script-->
+    <style type="text/javascript">
+
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <h2>JS JSON JavaScript Object Notation</h2>
+    <p>Data is in name / valur pairs</p>
+    <p>Data is separated by commas</p>
+    <p>Curly braces hold objects</p>
+    <p>Square brackets hold array </p>
+    <p>JSON values can be Numbers / Booleans / Arrays /Objects / Strings/ Null</p>
+    <code>Numbers: 2-83.5<br/>
+        Booleans:truefalse<br/>
+        Arrays:[75, 95, 85]["Web", "Programming"]<br/>
+        Objects:{"Key": "value"}<br/>
+        Strings: "Web Programming""T“<br/>
+        Null: Null <br/>
+    </code>
+    <p>JSON values can not be Funciton / Data / Underfined</p>
+    <p>Example</p>
+    <code>
+    var course =  {<br/>
+    "id": "SODV3201", //String<br/>
+    "language": "Web Foundation",<br/>
+    "price": 500, // Number<br/>
+    "topics": ["JS", "Java"] // Array<br/>
+    "students": [{"name":"Eli","isProgrammer": true}] // Object<br/>
+}<br/>
+</code>
+
+    <p>JSON.parse('string') is used so the data becomes a JS object</p>
+    <p>JSON.stringify(object) is used to convert JS object into a string</p>
+
+    <script type="text/javascript">
+        // format of an object in JS
+        var obj = {
+            name: "Lila",
+            marks: 8,
+            isProgrammer: true
+        };
+
+        // format of an object for JSON
+        var JSONObj = {
+            "name": "Eli",
+            "marks": 8,
+            "isprogrammer": true
+        };
+
+        //Convert to JASON object
+        var jsonText = JSON.stringify(obj);
+
+        console.log("This is a JS object: " + obj)
+        console.log("This is the same object converted to a string JASON object: " + jsonText);
+
+        console.log("This is a JASON object: " + JSONObj);
+
+        // format of an object for JSON with array of object //NOT WORKING
+        var students = {"student": [  
+            {
+                "name": "Mark",
+                "age": 26,
+                "gender": "male"
+            },
+            {
+                "name": "Alice",
+                "age": 27,
+                "gender": "female"
+            }]
+        };
+
+        console.log(students);
+
+        console.log(JSON.parse(students)); // DO NOT WORK
+        
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Date        : -->
+<!--Title       : -->
+<!--Description : -->
+<!--Use "Shift" + "Alt" +"F" to justify evething -->
+
+
+<head>
+
+    <title>JS function</title>
+
+    <!-- External set up of JS-->
+    <script type="text/javascript" src="#"></script>
+
+</head>
+
+<body>
+    <p>Hello</p>
+    <script type="text/javascript">
+        function compareDataType() {
+            //body....
+            let a = 8;       // declare variable on a the block scope
+            var b = "8";     // define a variable localy for the all function scope
+
+            console.log(a == b); // == compare "value" but not data type //true here
+        }
+        compareDataType();
+
+        function compareDataType2() {
+            var c = 10;
+            var z = "10";
+
+            console.log(c === z); // === compare data type and then the variable //false here
+        }
+        compareDataType2();
+
+        function compareDataType3() {
+            var x = 5;
+            var y = "2" + "8";
+
+            console.log(x == y);//false here
+        }
+        compareDataType3();
+
+        function compareDataType4() {
+            var x = "test";
+            var y = "test" + 2 + 10;
+
+            console.log(y);
+            console.log("This Function is = " + (x == y));
+        }
+        compareDataType4();
+
+        function compareDataType5() {
+            var x = 5 + 6 + " test";
+            var y = "11 test";
+            console.log(x); //return 11 test -->string type
+            console.log(y); //return 11 test -->string type
+            console.log("This Function is = " + (x == y)); //true
+        }
+        compareDataType5();
+
+        function compareDataType6() {
+            var x = 5 + 6 + " test";//return 11 test -->string type
+            var y = "11 test"; //return 11 test -->string type
+            console.log(x);
+            console.log(y);
+            console.log("This Function is = " + (x === y));//true
+        }
+        compareDataType6();
+
+        function compareDataType7() {
+            var x = "test " + 5 + 6; //return concatenate strings (convert 5 and 6 to string) //return  test 56 -->string type
+            var y = "test 11" //return test 56 -->string type
+            console.log(x);
+            console.log(y);
+            console.log("This Function is = " + (x === y));//false
+        }
+        compareDataType7();
+
+        function compareDataType8() {
+            var x = "test " + 5 + 6; //return concatenate strings (convert 5 and 6 to string) //return  test 56 -->string type
+            var y = "test 56" //return test 56 -->string type
+            console.log(x);
+            console.log(y);
+            console.log("This Function is = " + (x === y));//true
+        }
+        compareDataType8();
+
+        //type of function  definition
+        //  Named function
+        //  Anonymous function
+        //  Function expression
+        //  Function with argument
+        //  Function with parameter
+
+
+        //Function declaration
+        function square(n) {
+            return console.log(n * n);
+        }
+        square(5);
+        square(6);
+
+        //Anonymous function
+        var sqr = function (n) {
+            return console.log(n * n);
+        }
+        //(4);//if call this way can be use only once
+        sqr(4);
+        sqr(1000); 
+
+        var multip = function (a, b) {
+            return console.log(a * b);
+        }
+        multip(2, 10); // why this is working for an anymous function?
+        //(2, 10); // can we call sevral times in a row an anonymous fucntion?
+
+        var product = function (a, b) {
+            return console.log(a + b);
+        }
+        product(5, 4);
+
+        // Using  function as an object method
+        var calculate = {
+            message: "Nice",    // define variable message
+            p: 8,               // define variable p
+            w: 2,               // define variable w
+            product: function (p, w) {
+                return (
+                    console.log(this.message), //will display the message define within the function
+                    console.log(this.p + this.w), // take the arguments define within the function
+                    console.log(p + w) // will take  the arguments define the the call of the funciton
+                )
+
+            },
+        }
+        calculate.product(4, 2);
+    </script>
+    <p>
+    <h2> Type of function definitio</h2>
+
+    1 - Named function <br />
+    2 - Anonymous function<br />
+    3 - Function expression <br />
+    4 - Function with parameter <br />
+    5 - Self invoking function <br />
+
+    </p>
+    <p id="sqr"></p>
+
+
+
+
+
+    
+    <script>
+        //named function with parameter
+        function square(n) {
+            document.getElementById('sqr').innerHTML = "Square of " + n + " = " + n * n;
+            return console.log(n * n);
+        }
+
+        //named function with argument
+        square(4);
+        square(8);// display only the last one in html file but display both in console
+
+        //anonymous function with parameter
+        var square2 = function (n) { return n * n; };
+        console.log(square2(5));
+        console.log(square2(10));
+
+        var cube = (function (n) { return console.log(n * n); })(6);
+
+        //Self invoking function
+        var multi =function(z){
+            return ("The result of the anonymous function call ***** multi = " +z*z); //The result of the anonymous function call ***** multi =  4
+            //return z*z; // return 4
+            // return console.log(z*z); // return undefined
+        }
+        console.log(multi(2));
+        // console.log("the call function /////// " + (multi(2))); // the call return function /////// The result of the anonymous function call ***** multi = 4
+    
+        //named self-invoking function (it is not anonymous!!!! "greeting" is the name)
+        var message =function greeting (){
+            console.log("Hello");
+            //alert("Hello number 2");
+            console.log(square2(4));
+        } 
+        ();
+
+        // Anonymous function with 2 parameters
+        var multi =function(x,y){
+            console.log(x + y);
+        }
+        multi(4,2);
+
+        //Anonymous and self-invokink function
+        (function(m,n){console.log(m+n);})
+        ("Hello ","from me.")
+    
+    </script>
+
+
+
+</body>
+
+</html>

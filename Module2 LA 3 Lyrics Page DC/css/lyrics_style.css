@@ -1,0 +1,158 @@
+div.page{
+    width: 1000px;
+    margin: auto;
+    background-color:white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/*header content setting*/
+div.page_header{
+    width: 1000px;
+}
+
+div.header {
+    background-color: yellow;
+    height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    /* Weird - Has for effect to center vertical text*/
+    border: 3px solid yellow; 
+}
+
+h1{
+    color: yellow;
+    font-size: 40px;
+    margin-bottom: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div.menu {
+    background-color: grey;
+    text-align: center;
+    height: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+div.menu a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 40px 40px;
+    text-decoration: none;
+  }
+
+
+
+div.description {
+    background-color: black;
+    opacity: 0.75;
+    height: 250px;
+    text-transform: uppercase;
+    padding: 0px 0px 0px 12px;   
+}
+
+/*main content setting*/
+div.site_content{
+    width: 600px;
+    float:left;
+    background-color:white;
+    margin: 25px 0px 0px 25px;
+
+}
+
+h2 {
+    background-color: yellow; 
+    width: 150px;
+    text-align: center;  
+    margin-bottom: 0;
+    padding: 8px 8px 8px 8px;
+}
+
+h3 {
+    color:white;
+    margin-top: 0;
+}
+
+h4 {
+    color:white;
+}
+
+div.verse {
+    border-style: solid;
+    border-color: white;
+    border-width: 5px;
+    border-left-color: yellow;
+    padding: 0px 0px 0px 12px;            
+}
+
+div.chorus {
+    border-style: solid;
+    border-color: white;
+    border-width: 5px;
+    border-left-color: yellow;
+    margin-left: 20px;
+    padding: 0px 0px 0px 12px;
+}
+
+#verse{
+    border-width: 5px;
+    border-left-color: yellow; 
+}
+
+/*side note setting*/
+div.page_side_note_title{
+    width: 250px;
+    float: right;
+    margin-top: 50px;
+    margin-right: 20px;
+    padding-right: 10px;
+}
+
+div.page_side_note{
+    color: white;
+    width: 250px;
+    float: right;
+    background-color: rgb(58, 58, 58);
+    margin: 0px 20px 50px 20px;
+    padding: 10px;
+}
+
+h2.head_side_note {
+    color: black;
+    background-color: yellow; 
+    display: flex;
+    justify-content: left;
+    width: 250px;
+    margin-left: -10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 12px;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+p.note_paragraph {
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+div.cite {
+    margin-left: 60px;
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+div.video {
+    display: flex;
+    justify-content: center; /* center video*/
+}
+
+/*footer setting*/
+div.page_footer{
+    width: 1000px;
+    clear:both;
+    background-color: white;
+    font-size: x-small;
+}

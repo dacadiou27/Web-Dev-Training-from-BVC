@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Date        : -->
+<!--Title       : -->
+<!--Description : -->
+<!--Use "Shift" + "Alt" +"F" to justify evething -->
+
+
+<head>
+
+    <title>Error Handling</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    -->
+
+    <!-- External set up of style-->
+    <link rel="stylesheet" type="text/css" href="#">
+
+    <!-- Internal set up of style-->
+    <style type="text/css">
+
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <h2>Error Handling</h2>
+    <h3>try , cath and finally, and throw in JS</h3>
+
+    <label>Please enter a number between 5 and 10: </label>
+    <input type="text" id="check" />
+    <button onclick="test();">Check</button>
+
+    <p id="testNumber"></p>
+    <p id="error_Msg"></p>
+
+    <label>Please enter your name :</label>
+    <input type="text" id="firstName" onchange="displayMessage();" />
+    <p id="display"></p>
+    <p id="general_Msg"></p>
+
+    <form>
+        <label for="email">Email address: </label>
+        <input type="text" id="email" />
+        <button onclick="validateEmail();">Submit</button>
+        <div id="emailMsg"></div>
+    </form>
+
+    <script type="text/javascript">
+        // Using try catch with custom messages
+
+        // try trow catch syntax
+        function test() {
+            var x;
+            var message;
+
+            message = document.getElementById('testNumber');
+            message.innerHTML = "";
+            x = document.getElementById("check").value;
+
+            try {
+                if (x == "")
+                    throw " is empty";
+                if (isNaN(x))
+                    throw " is not a number";
+                x = Number(x);      //Convert  input to a number
+                if (x < 5)
+                    throw " is too low";
+                if (x > 10)
+                    throw " is too high";
+                if (5 <= x <= 10)
+                    throw " is good";
+            }
+            catch (err) {
+                message.innerHTML = "The input" + err;
+            }
+        }
+
+        // try catch finally syntax example
+        var a = 5;
+
+        function customMsg() {
+            console.log("The var is not defined please check your code !")
+        }
+
+        try {
+            console.log(b); // typed b instead of a
+        }
+        catch (err) {
+            customMsg(); // return the custom message
+            console.log(err); // return the basic message
+        }
+        finally {
+            console.log("The value of a = " + a);
+        }
+
+        // try catch finally syntax example
+        try {
+            a = a + b;
+        }
+
+        catch (error) {
+            console.log(error.name + " - " + error.message);
+        }
+        finally {
+            console.log("Please declare a & b before you use them.");
+        }
+
+        // try catch syntax example
+
+        function summer() {
+            try {
+                greeting("Welcome " + name); // gretting function is not define purposely
+            }
+            catch (errmsg) {
+                document.getElementById("error_Msg").innerHTML = errmsg.message;
+            }
+        }
+        summer();
+
+        // try catch finally syntax example
+
+        function welcome() {
+            var name = document.getElementById("firstName").value;
+            document.getElementById("display").innerHTML = "Welcome to this webpage " + name;
+        }
+
+        function displayMessage() {
+            try {
+                //welcome();
+                wlcome(); //Typo to activate try
+            }
+            catch (error2) {
+                document.getElementById("display").innerHTML = error2.message;
+            }
+            finally {
+                document.getElementById("general_Msg").innerHTML = "We did a try catch error handling with function calling!";
+            }
+        }
+
+        function checkEmail(){
+            var email  =document.getElementById("email").value;
+            if(email.length == 0){
+                throw new Error("Please provide an email address.");
+            }
+            else if (email.in("@") === -1){ //error here
+                throw new Error("Please provide a valid email address.");
+            }
+            document.getElementById("email_Msg").innerHTML = "Your email is : " + email;
+        }
+
+        function validateEmail(){
+            try{
+                checkEmail();
+            }
+            catch(error){
+                document.getElementById("email_Msg").innerHTML="The error is " + error.message;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Date        :20th July 2020 -->
+<!--Title       :Learning Activity 3: JS Object, Function and Array -->
+<!--Description : -->
+<!--Use "Shift" + "Alt" +"F" to justify evething -->
+<!--Comment Code Block Ctrl+K+C/Ctrl+K+U-->
+
+<head>
+
+    <title>Learning Activity 3: JS Object, Function and Array</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <!-- External set up of style-->
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+    <!-- Internal set up of style-->
+    <style type="text/css">
+
+    </style>
+
+</head>
+
+<body>
+    <h3>Learning Activity 3: JS Object, Function and Array</h3>
+    <note>Note: You must attend the class discussion and refer to the given online materials to answer the following
+        questions.</note>
+
+    <h4>Part I</h4>
+    <div class="exe">
+        <p class="question">Question 1</p>
+        <p class="instruction">What is a function?</p>
+        <p class="responce">Responce : </p>
+        <p>Functions are one of the fundamental building blocks in JavaScript. A function is a JavaScript procedure—a
+            set of statements that performs a task or calculates a value. To use a function, you must define it
+            somewhere in the scope from which you wish to call it.</p>
+        <a
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#:~:text=A%20function%20is%20a%20JavaScript,you%20wish%20to%20call%20it.">
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions</a>
+    </div>
+
+    <div class="exe">
+        <p class="question">Question 2</p>
+        <p class="instruction">What are the different JS function syntaxes?</p>
+        <p class="responce">Responce : </p>
+        <p>Function parameters are listed inside the parentheses () in the function definition.The parentheses may
+            include parameter names separated by commas:
+            (parameter1, parameter2, ...).The code to be executed, by the function, is placed inside curly brackets: {}.
+            Function arguments are the values received by the function when it is invoked.
+
+            Inside the function, the arguments (the parameters) behave as local variables.</p>
+        <code>function name(parameter1, parameter2, parameter3) {<br/>
+            // code to be executed<br/>
+          }</code>
+        <br />
+        <br />
+        <p>anonymous function</p>
+        <code>var x = function (a, b) {return a * b};</code>
+        <br />
+        <br />
+
+        <p> function constructor</p>
+        <code>var myFunction = new Function("a", "b", "return a * b");;</code>
+        <br />
+        <br />
+
+        <p> self invoking function </p>
+        <code>(function () {<br />
+            var x = "Hello!!";  // I will invoke myself<br />
+          })();</code>
+        <br />
+        <br />
+        <p>arrow function syntax</p>
+        <code> ES5<br />
+            var x = function(x, y) {<br />
+              return x * y;<br />
+            }<br />
+            <br />
+            ES6<br />
+            const x = (x, y) => x * y;<br />
+        </code>
+    </div>
+
+    <div class="exe">
+        <p class="question">Question 3</p>
+        <p class="instruction">Define the following terminologies: arguments, parameters, return values, function call,
+            function name.</p>
+        <p class="responce">Responce : </p>
+        <p><b>Arguments</b> are Passed by Value. The parameters, in a function call, are the function's arguments.
+            JavaScript arguments are passed by value: The function only gets to know the values, not the argument's
+            locations. If a function changes an argument's value, it does not change the parameter's original value.</p>
+        <p><b>Parameters</b> are variables listed as a part of the function definition.</p>
+        <p>JavaScript provides for passing one value back to the code that called it after everything in the function
+            that needs to run has finished running. JavaScript passes a value from a function back to the code that
+            called it by using the return statement . The <b>value to be returned</b> is specified in the return keyword
+        </p>
+        <p>The code inside a function is not executed when the function is defined. The code inside a function is
+            executed when the function is invoked. It is common to use the term <b>"call a function"</b>b> instead of
+            "invoke a function". It is also common to say "call upon a function", "start a function", or "execute a
+            function".</p>
+        <p>A JavaScript function is defined with the function keyword, followed by a name, followed by parentheses
+            ().<b>Function names</b> can contain letters, digits, underscores, and dollar signs (same rules as
+            variables).</p>
+    </div>
+
+    <div class="exe">
+        <p class="question">Question 4</p>
+        <p class="instruction">What is an object in JS?</p>
+        <p class="responce">Responce : </p>
+        <p>JavaScript is designed on a simple object-based paradigm. An <b>object</b> is a collection of properties, and
+            a property is an association between a name (or key) and a value. A property's value can be a function, in
+            which case the property is known as a method.</p>
+    </div>
+
+    <div class="exe">
+        <p class="question">Question 5</p>
+        <p class="instruction">What is the syntax to create a simple JS object?</p>
+        <p class="responce">Responce : </p>
+        <p>The object literal is a simple way of creating an object using { } brackets. You can include key-value pair
+            in { }, where key would be property or method name and value will be value of property of any data type or a
+            function.</p>
+        <code> var <'object-name'> = { key1: value1, key2: value2,... keyN: valueN}; </code>
+    </div>
+
+    <div class="exe">
+        <p class="question">Question 6</p>
+        <p class="instruction">What can an object contain in JS?</p>
+        <p class="responce">Responce : </p>
+        <p>Object properties can be both primitive values (string, number, boolean, null, undefined), other objects, and
+            functions.</p>
+    </div>
+
+    <div class="exe">
+        <p class="question">Question 7</p>
+        <p class="instruction">How do you define “this” keyword in JS?</p>
+        <p class="responce">Responce : </p>
+        <p><b>this</b> keyword refers to an object, that object which is executing the current bit of javascript code.
+            In other words, every javascript function while executing has a reference to its current execution context,
+            called this. Execution context means here is how the function is called</p>
+        <p>It has different values depending on where it is used: <br /></p>
+        <ul>
+            <li>In a method, this refers to the owner object.</li>
+            <li>Alone, this refers to the global object.</li>
+            <li>In a function, this refers to the global object.</li>
+            <li>In a function, in strict mode, this is undefined.</li>
+            <li>In an event, this refers to the element that received the event.</li>
+            <li>Methods like call(), and apply() can refer this to any object.</li>
+        </ul>
+    </div>
+
+    <div class="exe">
+        <p class="question">Question 8</p>
+        <p class="instruction"> What is an Array in JS?</p>
+        <p class="responce">Responce : </p>
+        <p>The Array object lets you store multiple values in a single variable. It stores a fixed-size sequential
+            collection of elements of the same type. An array is used to store a collection of data, but it is often
+            more useful to think of an array as a collection of variables of the same type. An array is able to store a
+            collection of variable of deferent type whitin the same array (primitive values or objects). You can access
+            the values by referring to an index number.</p>
+
+    </div>
+
+    <div class="exe">
+        <p class="question">Question 9</p>
+        <p class="instruction">How do you define an Array in JS?</p>
+        <p class="responce">Responce : </p>
+        <p>There are basically two ways to declare an array.</p>
+        <code>var fruits = new Array( "apple", "orange", "mango" );//not recomended</code> <br />
+        <code>var fruits = [ "apple", "orange", "mango" ];</code>
+        <br />
+        <br />
+        <p>Array properties:</p>
+        <ul>
+            <li><b>constructor</b> Returns the function that created the Array object's prototype</li>
+            <li><b>length</b> Sets or returns the number of elements in an array</li>
+            <li><b>prototype</b> Allows you to add properties and methods to an Array object</li>
+        </ul>
+    </div>
+
+    <div class="exe">
+        <p class="question">Question 10</p>
+        <p class="instruction">What are the different built-in methods of an Array in JS?</p>
+        <p class="responce">Responce : </p>
+        <p>Built-in method description of an Array:</p>
+        <ul>
+            <li>concat() Joins two or more arrays, and returns a copy of the joined arrays</li>
+            <li>copyWithin() Copies array elements within the array, to and from specified positions</li>
+            <li>entries() Returns a key/value pair Array Iteration Object</li>
+            <li>every() Checks if every element in an array pass a test</li>
+            <li>fill() Fill the elements in an array with a static value</li>
+            <li>filter() Creates a new array with every element in an array that pass a test</li>
+            <li>find() Returns the value of the first element in an array that pass a test</li>
+            <li>findIndex() Returns the index of the first element in an array that pass a test</li>
+            <li>forEach() Calls a function for each array element</li>
+            <li>from() Creates an array from an object</li>
+            <li>includes() Check if an array contains the specified element</li>
+            <li>indexOf() Search the array for an element and returns its position</li>
+            <li>isArray() Checks whether an object is an array</li>
+            <li>join() Joins all elements of an array into a string</li>
+            <li>keys() Returns a Array Iteration Object, containing the keys of the original array</li>
+            <li>lastIndexOf() Search the array for an element, starting at the end, and returns its position</li>
+            <li>map() Creates a new array with the result of calling a function for each array element</li>
+            <li> pop() Removes the last element of an array, and returns that element</li>
+            <li>push() Adds new elements to the end of an array, and returns the new length</li>
+            <li>reduce() Reduce the values of an array to a single value (going left-to-right)</li>
+            <li>reduceRight() Reduce the values of an array to a single value (going right-to-left)</li>
+            <li>reverse() Reverses the order of the elements in an array</li>
+            <li>shift() Removes the first element of an array, and returns that element</li>
+            <li>slice() Selects a part of an array, and returns the new array</li>
+            <li>some() Checks if any of the elements in an array pass a test</li>
+            <li>sort() Sorts the elements of an array</li>
+            <li>splice() Adds/Removes elements from an array</li>
+            <li>toString() Converts an array to a string, and returns the result</li>
+            <li> unshift() Adds new elements to the beginning of an array, and returns the new length</li>
+            <li>valueOf() Returns the primitive value of an array</li>
+        </ul>
+    </div>
+
+
+    <h4>Part II</h4>
+    <div class="exe">
+        <p class="question">Question 1</p>
+        <p class="instruction">What are the different built-in methods of an Array in JS?</p>
+        <p class="responce">Responce : </p>
+        <p>See Part I Question 10 responce.</p>
+    </div>
+    <div class="exe">
+        <p class="question">Question 2</p>
+        <p class="instruction">You are given an array of animal names, [‘cat’, ’ox’, ’lion’]. Display the length of this
+            array and add two more animal names at the beginning and at the end of the array.</p>
+        <p class="responce">Responce : </p>
+        <label type="text">What is your animal to add to the array?</label>
+        <input type="text" id="animal" />
+        <input type="button" value="Length" onclick="displayLength()" />
+        <input type="button" value="Add Front" onclick="addToBeginning()" />
+        <input type="button" value="Add End" onclick="addToEnd()" />
+        <div id="displayArray"></div>
+        <div id="displayArrayLength"></div>
+
+
+        <script type="text/javascript">
+            var animal = ["cat", "ox", "lion"];
+
+            function displayLength() {
+                displayArrayLength.innerHTML = "The length of this array is : " + animal.length + '.';
+                displayArray.innerHTML = animal;
+
+            }
+
+            function addToBeginning() {
+                animal.unshift(document.getElementById("animal").value);
+                displayLength();
+            }
+
+            function addToEnd() {
+                //animal[animal.length]=document.getElementById("animal").value;
+                animal.push(document.getElementById("animal").value);
+                displayLength();
+            }
+        </script>
+    </div>
+
+    <div class="exe">
+        <p class="question">Question 3</p>
+        <p class="instruction">Which one is the best mechanism to iterate through array elements?</p>
+        <p class="responce">Responce : </p>
+        <p>There are diferent options:</p>
+        <li>Sequential for loop</li>
+        <li>Array.prototype.forEach</li>
+        <li>ES6 for-of statement</li>
+        <li>ES6 for-in statement</li>
+        <br />
+        <p>The forEach method seem to be the most powerfull (very short and succinct and decalrative)</p>
+        <code>
+            const array = ["one", "two", "three"]<br/>
+                array.forEach(function (item, index) {<br/>
+                console.log(item, index);<br/>
+            });<br/>
+        </code>
+        <br />
+        <p>More info</p>
+        <a href="https://stackoverflow.com/questions/3010840/loop-through-an-array-in-javascript">
+            https://stackoverflow.com/questions/3010840/loop-through-an-array-in-javascript</a>
+    </div>
+
+
+    <h4>Part III</h4>
+    <div class="exe">
+        <p class="question">Question 1</p>
+        <p class="instruction">Write a JS program to remove specified elements from the right of a given array of
+            elements.</p>
+        <p class="responce">Responce : </p>
+        <label type="text">What is number of value in your array?</label>
+        <input type="text" id="dimention" placeholder="10" />
+        <label type="text">How many element do you want to remove from the array (from the right)?</label>
+        <input type="text" id="removeItems" placeholder="2" />
+        <input type="button" value="Remove" onclick="remove_from_right();" />
+        <p id="arraypopulated"></p>
+        <p id="shortarray"></p>
+
+        <script type="text/javascript">
+
+
+            function remove_from_right() {
+                let dimentionVar = parseInt(document.getElementById("dimention").value);
+                if (isNaN(dimentionVar)) dimentionVar = 10;
+                let removeItems = parseInt(document.getElementById("removeItems").value);
+                if (isNaN(removeItems)) removeItems = 2;
+
+                var numberArray3 = new Array(dimentionVar).fill(null);
+                for (let i = 0; i < dimentionVar; i++) {
+                    numberArray3[i] = Math.floor(Math.random() * 101);
+                }
+                arraypopulated.innerHTML = "Initial array : " + numberArray3;
+                var shortArrayVar = numberArray3.slice(0, numberArray3.length - removeItems);
+                shortarray.innerHTML = "Final array : " + shortArrayVar + " - " + removeItems + " element(s) have been removed from the right.";
+            }
+        </script>
+    </div>
+
+    <div class="exe">
+        <p class="question">Question 2</p>
+        <p class="instruction">Write a JS function that accepts a number as a parameter and check if the number is prime
+            or not.</p>
+        <p class="responce">Responce : </p>
+        <label type="text">What is your value to test?</label>
+        <input type="text" id="prime" placeholder="Random" />
+        <input type="button" value="Test" onclick="primeTest();" />
+        <div id="primenumber"></div>
+
+        <script type="text/javascript">
+
+
+            function primeTest() {
+                let prime = parseInt(document.getElementById("prime").value);
+                if (isNaN(prime)) prime = Math.floor(Math.random() * 101);
+
+                let test = 0;
+                for (let i = 2; i <= prime / 2; i++) {
+                    if (prime % i === 0) test = 1;
+                }
+                if (test === 0) primenumber.innerHTML = "The number " + prime + " is prime!";
+                else primenumber.innerHTML = "The number " + prime + " is not prime!";
+            }
+
+        </script>
+    </div>
+
+    <div class="exe">
+        <p class="question">Question 3</p>
+        <p class="instruction">Write a JS function that will take an array of numbers stored and find the second lowest
+            and second greatest numbers, respectively.</p>
+        <p class="responce">Responce : </p>
+        <label type="text">What is number of values in your array?</label>
+        <input type="text" id="dim" placeholder="10" />
+        <input type="button" value="Study" onclick="populate();" />
+        <p id="array"></p>
+        <p id="sortedarray"></p>
+        <p id="secondLowest"></p>
+        <p id="secondGreatest"></p>
+
+        <script type="text/javascript">
+            function populate() {
+                let dim = parseInt(document.getElementById("dim").value);
+                if (isNaN(dim)) dim = 10;
+
+                var numberArray = new Array(10).fill(null);
+                for (let i = 0; i < dim; i++) {
+                    numberArray[i] = Math.floor(Math.random() * 101);
+                }
+                array.innerHTML = numberArray;
+                numberArray.sort(function (a, b) { return a - b });
+                sortedarray.innerHTML = numberArray;
+                secondLowest.innerHTML = "The second lowest number of the array is : " + numberArray[1];
+                secondGreatest.innerHTML = "The second greatest number of the array is : " + numberArray[numberArray.length - 2];
+            }
+        </script>
+    </div>
+
+    <div class="exe">
+        <p class="question">Question 4</p>
+        <p class="instruction">Write a JS function to compute the value of bn where n is the exponent and b is the base.
+            Accept b and n from the user and display the result.</p>
+        <p class="power">Responce : </p>
+        <label type="text">What is your base value?</label>
+        <input type="text" id="pVal" placeholder="Ramdom" />
+        <label type="text">What is your exponent?</label>
+        <input type="text" id="pExp" placeholder="Ramdom" />
+        <input type="button" value="Power" onclick="powerNumber();" />
+        <p id="npower"></p>
+        <p id="bpower"></p>
+        <p id="resultpower"></p>
+
+        <script type="text/javascript">
+            function powerNumber() {
+                let n = parseInt(document.getElementById("pVal").value);
+                if (isNaN(n)) n = Math.floor(Math.random() * 6);
+                let b = parseInt(document.getElementById("pExp").value);
+                if (isNaN(b)) b = Math.floor(Math.random() * 6);
+                let inib = b;
+
+                b = inib;
+                if (n === 0) b = 1;
+                else if (n === 1) b = inib;
+                else {
+                    for (i = 2; i <= n; i++) {
+                        b *= inib;
+                    }
+                }
+                npower.innerHTML = "n = " + n;
+                bpower.innerHTML = "b = " + inib;
+                resultpower.innerHTML = inib + "<sup>" + n + "</sup>" + " = " + b;
+            }
+        </script>
+    </div>
+
+    <div class="exe">
+        <p class="question">Question 5</p>
+        <p class="instruction">Write a JS program that will return true if the string is y/yes or false if the string is
+            n/no.</p>
+        <p class="responce">Responce : </p>
+        <label type="text">Can you reply to this by y/yes or n/no?</label>
+        <input type="text" id="answerQuestion" />
+        <input type="button" value="Test" onclick="yesNo();" />
+        <p id="yesNoAnswer"></p>
+
+        <script type="text/javascript">
+            function yesNo() {
+                answer = document.getElementById("answerQuestion").value;
+                if (answer == "y" || answer == "yes" || answer == "Y" || answer == "YES" || answer == "Yes") yesNoAnswer.innerHTML = true;
+                else if (answer === "n" || answer === "no" || answer === "N" || answer === "NO" || answer === "No") yesNoAnswer.innerHTML = false;
+                else yesNoAnswer.innerHTML = "incorrect input";
+            }
+        </script>
+    </div>
+
+
+    <div class="exe">
+        <p class="question">Question 6</p>
+        <p class="instruction">Write a JS function that returns a passed string with letters in alphabetical order.</p>
+        <p class="responce">Responce : </p>
+        <label type="text">Can you provide a string of character (or a word)?</label>
+        <input type="text" id="word" />
+        <input type="button" value="Sort characters" onclick="alphabet_order();" />
+        <p id="provided_input"></p>
+        <p id="sortedalphabeticaly"></p>
+
+        <script type="text/javascript">
+            function alphabet_order() {
+                var string_provided = document.getElementById("word").value;
+                provided_input.innerHTML = "Provided string : " + string_provided;
+                sortedalphabeticaly.innerHTML = "Sorted alphabeticaly characters: " + string_provided.split('').sort().join('');
+            }
+        </script>
+    </div>
+
+    <div class="exe">
+        <p class="question">Question 7</p>
+        <p class="instruction">Write a JS program to get the sum of a given array, after mapping each element to a value
+            using the provided function (edited)</p>
+        <p class="responce">Responce : </p>
+        <label type="text">What is number of values in your array?</label>
+        <input type="text" id="lengtharray" placeholder="10" />
+        <input type="button" value="Sum" onclick="populateSum();" />
+        <p id="genratedarray"></p>
+        <p id="sumarray"></p>
+
+
+        <script type="text/javascript">
+            function populateSum() {
+                let lengthArray = parseInt(document.getElementById("lengtharray").value);
+                if (isNaN(lengthArray)) lengthArray = 10;
+
+                var sum = 0;
+                var genratedArrayVar = new Array(10).fill(null);
+                for (let i = 0; i < lengthArray; i++) {
+                    genratedArrayVar[i] = Math.floor(Math.random() * 101);
+                    sum += genratedArrayVar[i];
+                }
+
+                genratedarray.innerHTML = genratedArrayVar;
+                sumarray.innerHTML = "The sum of the array is : " + sum;
+            }
+        </script>
+    </div>
+
+    <div class="exe">
+        <p class="question">Question 8</p>
+        <p class="instruction">Given an array of integers in which all integers appear more than once except for 1, find
+            the integer that only appears once. For example, given the array [2, 4, 5, 5, 8, 5, 2, 1, 8, 1], the
+            function should return the number 4.</p>
+        <p class="responce">Responce : </p>
+        <p id="givenExample"></p>
+        <input type="button" value="Run" onclick="testFreq();" />
+        <p id="result_freq_test"></p>
+
+
+        <script type="text/javascript">
+            givenArray = [2, 4, 5, 5, 8, 5, 2, 1, 8, 1];
+            givenExample.innerHTML = givenArray;
+
+            function testFreq() {
+                let frequency;
+                let numberTotest;
+                let success = 0;
+
+                for (let i = 0; i < givenArray.length; i++) {
+                    numberTotest = givenArray[i];
+
+                    frequency = 0;
+                    for (let j = 0; j < givenArray.length; j++) {
+                        if (numberTotest == givenArray[j]) frequency += 1;
+                    }
+
+                    if (frequency == 1) success = givenArray[i];
+                }
+                result_freq_test.innerHTML = "The last integer in your array that only appears once is " + success;
+            }
+
+        </script>
+    </div>
+
+    <div class="exe">
+        <p class="question">Question 9</p>
+        <p class="instruction">Write a JS function that takes an array of integers and prints its maximum element.</p>
+        <p class="responce">Responce : </p>
+        <label type="text">What is the number of values in your array?</label>
+        <input type="text" id="dim2" placeholder="10" />
+        <input type="button" value="Find Max" onclick="populateMax();" />
+        <p id="array2"></p>
+        <p id="sortedarray"></p>
+        <p id="maxvalue"></p>
+
+        <script type="text/javascript">
+
+
+            function populateMax() {
+                let dim2 = parseInt(document.getElementById("dim2").value);
+                if (isNaN(dim2)) dim2 = 10;
+
+                var numberArray2 = new Array(10).fill(null);
+                for (let i = 0; i < dim2; i++) {
+                    numberArray2[i] = Math.floor(Math.random() * 101);
+                }
+
+                var max = numberArray2[0];
+                var maxIndex = 0;
+                for (let i = 1; i < dim2; i++) {
+                    if (numberArray2[i] > max) {
+                        max = numberArray2[i];
+                        maxIndex = i;
+                    }
+                }
+                array2.innerHTML = numberArray2;
+                maxvalue.innerHTML = "The maximum element of the array is : " + max + ".<br /> Its index is " + maxIndex + ".";
+            }
+        </script>
+    </div>
+
+
+    <div class="exe">
+        <p class="question">Question 10</p>
+        <p class="instruction">Write a JS function that determines if an input number is even or odd.</p>
+        <p class="responce">Responce : </p>
+        <label type="text">What is your value to test?</label>
+        <input type="text" id="val" placeholder="Random" />
+        <input type="button" value="Test" onclick="oddEven();" />
+        <div id="oddeven"></div>
+
+        <script type="text/javascript">
+
+
+            function oddEven() {
+                let valVar = parseInt(document.getElementById("val").value);
+                if (isNaN(valVar)) valVar = Math.floor(Math.random() * 101);
+
+                if (valVar % 2 == 0) oddeven.innerHTML = "The value " + valVar + " is even!";
+                else oddeven.innerHTML = "The value " + valVar + " is odd!";
+            }
+
+        </script>
+    </div>
+
+</body>
+
+</html>

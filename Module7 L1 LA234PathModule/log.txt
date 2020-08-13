@@ -1,0 +1,12 @@
+name:country.csv
+num of lines:0
+succesfuly imported:undefined
+date imported:undefined
+name:Zone.csv
+num of lines:0
+succesfuly imported:undefined
+date imported:undefined
+name:timezone.csv
+num of lines:0
+succesfuly imported:undefined
+date imported:undefined

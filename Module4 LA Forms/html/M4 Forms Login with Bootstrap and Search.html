@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html land="en">
+
+<!--Date        : 24th June 2020-->
+<!--Title       : M4 Forms-->
+<!--Description : Practice-->
+<!--Use "Shift" + "Alt" +"F" to justify evething correctly -->
+
+<head>
+
+    <title>M4 Forms Login with Bootstrap in class</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <!-- External set up of style
+    <link rel="stylesheet" type"text/css" href="../css/style.css">-->
+    <!-- Internal set up of style-->
+
+    <style type="text/css">
+        .wrapper {
+            margin: auto;
+            margin-top: 3%;
+            width: 960px;
+            background-color: #ccc;
+            border-left: solid grey 3px;
+        }
+
+        input[type=password], input[type=text] {
+            width: 50%;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <!--Did not erase the container class but added a nested class under-->
+        <div class="wrapper">
+            <h2>Login Form</h2>
+            <form action="/apply.js">
+                <div>
+                    <img src="../img/avatar.jpg" alt="Avatar" class="rounded-circle"">
+             </div>
+
+            <div class=" form-group">
+                    <label for="username" class="form-check-label">Username:</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
+                </div>
+
+                <div class="form-group">
+                    <label for="pwd" class="form-check-label">Password:</label>
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                </div>
+
+                <div class="form-group"></i>">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+                    </label>
+                </div>
+                <button type="button" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+    <br />
+    <div class="container">
+        <div class="wrapper">
+            <br />
+
+            <h2>Search Form</h2>
+            <br />
+            <form>
+                <div class="form-group row ml-1 ">
+                    <label for="searchname" class="form-check-label mt-1">Search : </label>
+                    <input type="text" name="searchname" class="form-control"/>
+                    <button type="submit" class="btn btn-primary "> Go </button>
+                </div>
+                <br />
+                <br />
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

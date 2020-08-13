@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html land="en">
+
+<!--Date        : 24th June 2020-->
+<!--Title       : M4 Forms-->
+<!--Description : Practice-->
+<!--Use "Shift" + "Alt" +"F" to justify evething correctly -->
+
+<head>
+
+    <title>M4 Forms Login with Bootstrap and Search</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <!-- External set up of style
+    <link rel="stylesheet" type"text/css" href="../css/style.css">-->
+    <!-- Internal set up of style-->
+
+    <style type="text/css">
+        body {
+            background-image: url("../img/avatar.jpg");
+            background-size: repeat;
+            background-color: white;
+        }
+
+        .container {
+            margin: auto;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+
+        .wrapper {
+            margin: auto;
+            margin-top: 3%;
+            width: 100%;
+            background-color: burlywood;
+            border: solid black 3px;
+        }
+
+        input[type=password], input[type=text], input[type=email] {
+            width: 100%;
+        }
+
+        .form-group.required .form-check-label:after {
+        content:"*";
+        color:red;
+        }
+
+    </style>
+
+</head>
+<body>
+    <form action="/apply.js">
+          <div class="container">
+            <!--Did not erase the container class but added a nested class under-->
+            <div class="wrapper">
+
+                
+                <!--Breack the box with the text-->
+                <div>
+                    <p>User icon: <span class="glyphicon glyphicon-user"></span></p>
+                </div>
+
+            <h4>Login Information</h4>
+                <div class="form-group">
+                    <label for="email" class="form-check-label">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="name@server.com" name="email" >
+                </div>
+
+                <div class="form-group">
+                    <label for="pswd" class="form-check-label">Password:</label>
+                    <input type="password" class="form-control" id="pswd" placeholder="Enter password" name="pswd" required>
+                </div>
+
+                <br />
+                <button type="button" class="btn btn-primary">Login</button>
+
+
+                <div class="form-group ml-4">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+                    </label>
+                </div>
+
+                <h4>User Information</h4>
+
+                <div class="form-group">
+                    <label for="firstname" class="form-check-label">Username:</label>
+                    <input type="text" class="form-control" id="firstname" placeholder="Enter first name" name="firstname">
+                </div>
+
+                <div class="form-group">
+                    <label for="lastname" class="form-check-label">Username:</label>
+                    <input type="text" class="form-control" id="lastname" placeholder="Enter last name" name="lastname">
+                </div>
+
+                <div class="form-group ">
+                    <label for="gender" class="form-check-label">Gender: </label>
+                    <input type="radio" id="gender" name="gender" value="male" class="form-control "/>Male
+                    <input type="radio" id="gender" name="gender" value="female" class="form-control "/>Female <br />
+                    <input type="radio" id="gender" name="gender" value="others" class="form-control "/>Others <br/>
+                </div>
+
+                <h4>Search Form</h4>
+                <div class="container">
+                <div class="form-group row">
+                    <button type="submit" class="btn btn-primary "> Go </button>
+                    <input type="text" name="searchname" class="form-control" />
+                    <label for="searchname" class="form-check-label mt-1">Search : </label>
+                </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

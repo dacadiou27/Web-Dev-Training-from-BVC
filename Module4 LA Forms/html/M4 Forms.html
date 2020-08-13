@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html land="en">
+
+<!--Date        : 22nd June 2020-->
+<!--Title       : M4 Forms-->
+<!--Description : Practice-->
+<!--Use "Shift" + "Alt" +"F" to justify evething correctly -->
+
+<head>
+
+    <title>M4 Forms Practice</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    -->
+
+    <!-- External set up of style-->
+    <link rel="stylesheet" type"text/css" href="../css/style.css">
+
+
+    <!-- Internal set up of style-->
+    <style type="text/css">
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+                }
+
+        form{
+            border:5px solid #f1f1f1;
+            padding: 5px;;
+        }
+
+        input[type=text]{
+            width:40%;
+            margin:8px 0;
+            padding:12px 20px;
+            display:inline-block;
+            box-sizing:border-box;
+            border: 1px solid #ccc;
+        }
+
+        input[type=password]{
+            width:40%;
+            margin:8px 0;
+            padding:12px 20px;
+            display:inline-block;
+            box-sizing:border-box;
+            border: 1px solid #ccc;
+        }
+
+        button{
+            background-color: orange;
+            color:white;
+            padding 8px 0;
+            border:none;
+            width: 15%;
+            cursor: pointer;
+        }
+
+
+        button:hover{
+            opacity:0.8;
+        }
+
+        .imgcontainter{
+            text-align: left;
+            margin: 20pc 0pc 10pc 0pc;
+
+        }
+
+        img.avatar{
+            width: 15%;
+            border-radius: 50%;
+        }
+
+        #wrapper{
+            margin: auto;
+            width: 90%;
+            background: #ccc;
+            border-left:solid grey 5px;
+        }
+
+        .container{
+            padding:16px;
+        }
+
+        span.psw{
+            float:right;
+            padding-top: 15px;
+        }
+
+        .cancelbtn{
+            width: auto;
+            padding: 12px 18px;
+            background-color: coral;
+        }
+
+        @media screen and (max-width: 680px){
+            span.psw{
+                display: block;
+                float:none;
+            }
+
+            .cancelbtn{
+            width: 100%;
+            padding: 12px 18px;
+            background-color: coral;
+        }
+            
+        }
+    </style>
+
+</head>
+
+<body>
+    <form action="/login.js" method="post">
+            <div id="wrapper">
+                <h2>Login Form</h2>
+                
+                    <div class="imgcontainer">
+                        <img src="../img/avatar.jpg" alt="avatar" class="avatar">
+                    </div>
+
+                    <div class="container">
+                        <br/>
+                        <label form="username" ><b>User name :</b> </label> <!--this label "form" refer to the "name" of the input-->
+                        <input type="text" name="username" required/>
+                        <br/> <!--" required" Make it mandatory-->
+                        
+                        <label form="psd" ><b>Password :</b> </label>
+                        <input type="password" name="psd" required/>
+                        <br/> <!--Make it mandatory-->
+
+                        <label form="email" ><b>Email : </b> </label>
+                        <input type="text" name="email" required/>
+                        <br/>
+
+                        <button type="submit">Login</button>
+                        <br/> <!--Make it mandatory-->
+
+                        <input type="submit" value="Login" name="LogInButton"/>
+                        <br/>  
+
+                        
+                        <input type="checkbox" name="remenber" checked="checked"/>  <!--"checked" by default--> 
+                        <label form="remenber" ><b>Remenber me</b> </label> 
+                        <br/>
+
+                     </div>
+
+                <div class="container" style="background-color: burlywood;">
+                    <button type="button" class="cancelbtn"> Cancel</button>
+                    <span class="psw"> Forget <a href="#"> Password ? </a></span>
+                </div>
+            </div>
+
+
+    </form>
+    <form>
+        <fieldset> <!--Create the box around the form-->
+            <legend>User Information:</legend> <!--Breack the box with the text-->
+
+            Enter your name <br />
+            <input type="text" name="username"> <br />
+            <br />
+
+            First Name: <input type="text" name="firstname" /> <br />
+            Last Name: <input type="text" name="lastname" /> <br />
+            <br />
+
+            Enter your address:<br />
+            <text area rows="4" cols="40"></textarea>
+            <br />
+            <br />
+
+            <label for="password">Password: </label>
+                <input type="password" id="password" name="password" /> <br />
+            <label>Confirm your password</label> 
+                <input type="password" name="pass"><br/>  
+            <br />
+
+            <label for="email">Email: </label>
+                <input type="email" id="email" name="email" /> <br />
+            <br />
+
+            <label for="gender">Gender: </label>
+                <input type="radio" id="gender" name="gender" value="male" />Male
+                <input type="radio" id="gender" name="gender" value="female" />Female <br />
+                <input type="radio" id="gender" name="gender" value="others"/>Others <br/>  
+            <br />
+
+            Hobby:<br>
+                <input type="checkbox" id="cricket" name="cricket" value="cricket" />
+                    <label for="cricket">Cricket</label> <br>
+                <input type="checkbox" id="football" name="football" value="football" />
+                    <label for="football">Football</label> <br>
+                <input type="checkbox" id="hockey" name="hockey" value="hockey" />
+                    <label for="hockey">Hockey</label>
+            <br />
+            <br />
+
+            <label for="register_country" class="label">Select Country:</label></td>  
+                <select name="country" id="register_country" style="width:200px">  
+                    <option value="France">France</option>  
+                    <option value="Canada">Canada</option>  
+                    <option value="USA">USA</option>  
+                    <option value="China">China</option>  
+                    <option value="other">Other</option>  
+                </select>  
+            <br />
+            <br />
+
+            <input type="submit" value="submit">
+            <!--<input type="submit" value="sign-up"> --> 
+
+        </fieldset>
+    </form>
+
+</body>
+
+</html>

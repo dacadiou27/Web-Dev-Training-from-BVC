@@ -1,0 +1,60 @@
+﻿<html>
+<head>
+
+</head>
+<body>
+    <script>
+        let arr=[1,
+                 [7,9,6],
+                 [10,20,30,40],
+                 ['Amlie','Roman','Tom'], 
+                 8
+                ]
+        let arr2=[[20,10,6],[100,200,300,500],['King','Roni','Heni']]
+        // arr[4]
+        // arr[0]
+        // arr[1][1]
+        let len = arr.length;//5
+        let ele = arr[3][1];//Roman
+        
+        console.log("Array length = " + len); //what is the len of the given array?
+        console.log(ele);//what will be the output of this statement?
+        //1.  Write a code to display element 40 and 8
+        console.log(arr[2][3], arr[5])
+
+        //2.  Write a code to disoplay element Tom
+        console.log(arr[3][2])
+
+        //3.  Write a code to display the length of 3rd element
+        console.log("Length of 3rd element in arr is " + (arr[3]).length)//what is the len?
+
+        //Loop through multi_dim array
+        //ex1
+        console.log("Example 1 loop through array elements")
+        for(let i = 0; i < arr.length; i++){ //rows in the array
+                   console.log(arr[i]);//rows in the array
+        }
+
+        //ex2
+        console.log("Example 2 loop through nested array elem")
+        for(let i = 0; i < arr.length; i++){ //rows in the array, outer array
+            for(let j = 0 ; j < arr[i].length; j++){//col in the array, all non array elements will be skipped
+                console.log(arr[i][j]);//will return every array elements
+            }
+            console.log("-------------")
+        }
+
+        //ex3
+        console.log("Example 3 loop through nested array with forEach")
+
+        arr2.forEach(function(r){ //the array must contain array elements only to use forEach method
+            r.forEach(function(e){
+                console.log(e);
+            });
+            console.log("***************" );
+        });
+    //class learning activity
+    //Based on example 02 from previouse lecture, modify this code to display the output on HTML elements instead of console. 
+    </script>
+</body>
+</html>

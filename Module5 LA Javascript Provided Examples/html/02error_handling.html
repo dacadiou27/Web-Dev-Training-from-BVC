@@ -1,0 +1,44 @@
+﻿<!doctype HTML>
+<html> 
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title> Error handling ex2</title> 
+      <script>
+ 
+     </script>
+   </head>
+ 
+  <body >
+      <h1>try...catch...finally demo</h1>
+      <h3>Display a welcome message with function call</h3>
+        Enter your name : <input id="fname" onchange="displayMessage();">
+      <p id="display"></p>
+      <p id="general_msg"></p>
+    <script>
+        function welcome()
+            {   
+                var name = document.getElementById('fname').value;
+                document.getElementById('display').innerHTML = "Welcome to this website   " + name  ;
+            }
+
+        function displayMessage()
+        {
+            try
+            {
+               //welcome();  //correct funciton call
+               wel_come();   //incorrect function call
+            }
+            catch(error)
+            {
+                document.getElementById('display').innerHTML =   error.message;
+            }
+            finally{
+                document.getElementById('general_msg').innerHTML="You have executed welcome message display function in try catch error handling format"
+            }
+        }
+
+    </script>
+ 
+
+  </body>
+  </html>

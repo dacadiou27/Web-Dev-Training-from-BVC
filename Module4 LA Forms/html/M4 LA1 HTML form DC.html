@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html land="en">
+
+<!--Date        : 22nd June 2020-->
+<!--Title       : M4 Forms-->
+<!--Description : LA1 Dany Cadiou-->
+<!--Use "Shift" + "Alt" +"F" to justify evething correctly -->
+
+<head>
+
+    <title>M4 Learning Activity 1: HTML Form DC</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    -->
+
+    <!-- External set up of style-->
+    <!-- <link rel="stylesheet" type"text/css" href="../css/style.css">-->
+
+
+    <!-- Internal set up of style-->
+    <style>
+        body{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: white;
+            width: 90%;
+            margin: auto;
+            
+        }
+
+        form{
+            width: 100%;
+            background-color: black;
+            padding: 10px;
+        }
+
+        button{
+            background-color: blue;
+            color:white;
+            padding 8px 0;
+            border:solid white 1px;
+            width: 15%;
+            cursor: pointer;
+        }
+
+
+        button:hover{
+            opacity:0.5;
+            background-color: purple;
+            font-weight: bold;
+        }
+
+        .label{
+            font-style: italic;
+        }
+        @media screen and (max-width: 767px){
+            button{
+            background-color: blue;
+            color:white;
+            padding 8px 0;
+            border:solid white 1px;
+            width: 100%;
+            } 
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <form>
+        <fieldset> <!--Create the box around the form-->
+            <legend>Learning Activity 1: HTML Form</legend> <!--Breack the box with the text-->
+
+            Enter your name <br />
+            <input type="text" name="Name" id="nameid" placeholder="Fist name Last name"> <br />
+            <br />
+
+            <!--<input type="button" value="Send"><br />-->
+            <button type="submit">Send</button>
+            <br />
+
+            <p style="text-transform:uppercase; margin-bottom: 0px;">Is it sunny?</p><br/>
+                <input type="checkbox" id="Yes" name="Yes" value="Yes" checked/>
+                    <label for="Yes">Yes</label> <br>
+                <input type="checkbox" id="No" name="No" value="No" />
+                    <label for="No">No</label> <br>
+            <br />
+
+            <label for="date" class="label" style="color:red; padding-right: 10px;">Select day of week</label>
+            <select name="date" id="day_of_week" style="width:200px">  
+                <option value="Monday">Monday</option>  
+                <option value="Tuesday">Tuesday</option>  
+                <option value="Wednesday">Wednesday</option>  
+                <option value="Thursday">Thursday</option>  
+                <option value="Friday">Friday</option>  
+                <option value="Saturday">Saturday</option>  
+                <option value="Sunday">Sunday</option>  
+            </select>  
+        <br />
+        <br />
+
+        </fieldset>
+    </form>
+
+</body>
+
+</html>

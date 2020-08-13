@@ -1,0 +1,98 @@
+﻿<!doctype HTML>
+<html> 
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Array Example</title> 
+      <style type="text/css">   
+      #treeDisplay{
+        padding: 15px;
+      }       
+      </style>       
+   </head> 
+  <body >
+      <section class="full-page x-center-y-center-column">
+        <h2>Array Methods</h2>
+          <div>
+              Enter the new array element here <input type="text" id="newTreeName"> 
+              <button type="submit" OnClick="AddTreeFront();">Add in front</button>  
+              <button type="submit" OnClick="AddTree();">Add at the end</button> 
+              <button type="submit" OnClick="AddInMiddle();">Add in the middile</button>
+              <button type="submit" OnClick="Sorting();">sort</button>
+           </div>
+        <h2>List of trees</h2>
+        <ol id="treeDisplay">  </ol>
+        <p id="sortedTreeDisplay">  </p>  <br />
+     
+      </section>
+
+      <script>
+        "use strict"
+        let trees = ['spruce', 'pine', 'cedar', 'maple', 'oak', 'birch', 'aspen'];
+   
+        trees.forEach(function (element) {
+        var li = document.createElement('li');
+        treeDisplay.appendChild(li);
+        li.innerHTML += element;
+        });
+
+     
+        //use unshift and shift to add or remove element in the array
+        function AddTreeFront() { 
+         var newtree = document.getElementById("newTreeName").value;
+         trees.unshift(newtree);  
+         var li = document.createElement('li');  
+         treeDisplay.insertBefore(li,treeDisplay.childNodes[0]);  
+         li.innerHTML +=newtree        
+        } 
+
+        //use push to add element into array
+        function AddTree() { 
+          var newtree = document.getElementById("newTreeName").value;
+          trees.push(newtree);    
+          var li = document.createElement('li');  
+          treeDisplay.appendChild(li);  
+          li.innerHTML +=newtree      
+        } 
+        
+        //Use splice and slice to modify array
+        function AddInMiddle() { 
+          var newtree = document.getElementById("newTreeName").value;           
+          trees.splice(5,0, newtree);    
+          var li = document.createElement('li');  
+          treeDisplay.insertBefore(li,treeDisplay.childNodes[5]) ;  
+          li.innerHTML +=newtree   
+        };
+
+        //Sort Array
+        function Sorting(){
+         var sortedTree =  trees.sort(function (a, b) {
+            if (a.length < b.length) 
+              return -1;
+            if (a.length > b.length)
+            return 1;
+        });
+        sortedTreeDisplay.innerHTML = sortedTree;
+      }
+      //Q1
+          //Create different functions using the different builtin array methods and expand this application 
+          
+          // arr.find(test) // Find the first element matching a test function.
+
+          // arr.filter(filter) // Make a new array that selects out certain elements.
+
+          // arr.reduce(aggregate) // Return an aggregate value out of all elements.
+
+          // arr.every(test // Return true if all elements pass test.
+
+          // arr.some(test) // Return true if any element(s) pass test.
+
+      //Q2
+          // Modify the sort function to sort array and remove duplicate values from the array list
+
+      //Q3 
+          //Create a function to delete element from the array
+      //Q4
+      //Modify the style and make it more attaractive
+      </script>
+ </body> 
+</html>

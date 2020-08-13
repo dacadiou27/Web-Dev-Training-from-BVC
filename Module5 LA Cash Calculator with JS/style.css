@@ -1,0 +1,77 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  background-image: url(./fresh-colorful-fruits-and-vegetables-2210x1473.jpg);
+  background-color: white;
+  background-size: cover;
+}
+
+.main {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  border: solid 3px black;
+  border-radius: 50px 10px 50px 10px;
+  background-color: white;
+  opacity: 0.9;
+
+}
+
+.col-sm-4 {
+  padding: 1px;
+
+}
+
+.row {
+  margin: auto;
+}
+
+form {
+  max-width: 90%;
+  margin: auto;
+}
+
+button[type=submit] {
+  font-size: smaller;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+h4 {
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 2px 2px #5cb85c;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.number {
+  color: white;
+  background-color: #d9534f;
+  width: 25px;
+  height: 25px;
+  margin-top: 1px;
+}
+
+.number:hover {
+  background-color: black;
+}
+
+.head {
+  border-bottom: solid #5cb85c;
+  margin-bottom: 5px;
+  ;
+}
+
+table,
+tr,
+td,
+th,
+thead,
+tbody {
+  border: solid 3px green;
+}
+
+.calculator {
+  display: inline-block;
+}

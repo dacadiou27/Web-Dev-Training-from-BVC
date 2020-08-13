@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Date        : -->
+<!--Title       : -->
+<!--Description : -->
+<!--Use "Shift" + "Alt" +"F" to justify evething -->
+
+
+<head>
+
+    <title>JS function</title>
+
+    <!-- External set up of JS-->
+    <script type="text/javascript" src="./../js/js_scripts.js"></script>
+
+</head>
+
+<body>
+    <p>Function can be use in expression</p>
+    <label>
+        Number 1 :
+    </label>
+    <input type="text" name="number1" />
+    <input type="button" id="btn" value="Click me" onclick="display();" />
+
+    <p id="result1">
+
+    </p>
+
+    <p id="result2">
+
+    </p>
+
+    <script type="text/javascript">
+
+
+    </script>
+
+
+    <p>END of Function can be use in expression</p>
+
+    <script type="text/javascript">
+        // function for scaler computation
+        function square(n) {
+            return n * n;
+        }
+
+        function cube(n) {
+            return n * n * n;
+        }
+
+        // recursive function
+        function factorial(n) {
+            if (n < 2) {
+                return 1;
+            }
+            else {
+                return n = n * factorial(n - 1);
+            }
+        }
+
+        var x = 4;
+        var y = square(x);
+        var z = cube(x);
+        var v = factorial(x);
+        console.log("The value of x = " + x);
+        console.log("The value of y (square) = " + y);
+        console.log("The value of z (cube) = " + z);
+        console.log("The value of v (factorial) = " + v);
+
+        // What is a callback means?
+        // Callback function is a function that passes into another function as an argument, and then it is involed insode the outer function to complete it action.
+        // Callback vs Function call 
+
+        function greeting(name) {
+            console.log('Hello from ' + name);
+        }
+
+        function processUserInput(d) {
+            var name = "Dima";
+            d(name);
+        }
+        processUserInput(greeting);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title >Div position</title>
+    <style>
+        .page {
+            width: 1000px;
+        }
+
+        .Menu {
+            width: 80px;
+            height: 40px;
+            list-style-type: none ;
+            display:inline;
+        } 
+
+        .Menu2 {
+            width: 80px;
+            height: 40px;
+            list-style-type: none ;
+            display:block;
+        } 
+
+        .Menu3 {
+            width: 80px;
+            height: 40px;
+            display:inline-block;
+
+        } 
+
+        .title{
+        } 
+
+        .wrapper{
+            widows: 900px;
+            height: 900px;
+            background-color: rgb(115, 133, 211);
+            margin-top: 40px;
+            margin-left:70px;
+        }
+
+        .box{
+            width: 200px;
+            height: 200px;
+        }
+
+        .center{
+            display:block;
+            margin-left: auto;
+            margin-right: auto;
+            width:50%;
+            padding: 50px;
+        }
+
+        #diva {
+            /*position: fixed;*/ /* even if you scroll up or down ot deosn't move*/
+            background-color: green;
+            Left:90px;
+            top: 60px;
+            z-index:1; 
+            text-align: center;
+        }
+
+        #divb {
+            background-color: blue;
+        }
+
+        #divc {
+            background-color: red;
+            position:relative;
+        }
+
+        #divd {
+            background-color: orange;
+            position: absolute;
+        }
+
+        #list1{
+            background-color: salmon;
+            border:solid 1px black;
+            /*width: 150px;*/
+        }
+        #list2{
+            background-color:seagreen;
+        }
+
+        #list3{
+
+        }
+
+        #list4{
+            background-color:slateblue;
+        }
+
+        .list_warp{
+            border-radius: 3px;
+            border-bottom: royalblue solid 2px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="Page">
+
+
+
+    <br />
+
+    <div class="list_warp">
+        <h2>Default List Element with style </h2>
+        <li> Title 1 </li>
+        <li> Title 2 </li>
+        <li> Title 3 </li>
+        <li> Title 4 </li>
+        <li> Title 5 </li>
+    </div>
+
+    <br />
+
+    <div class="list_warp">
+        <h2> List Element with inline display </h2>
+        <li id="list1" class="Menu"> Menu 1 </li>
+        <li id="list2" class="Menu"> Menu 2 </li>
+        <li id="list3" class="Menu"> &nbsp;&nbsp;&nbsp; </li>
+        <li id="list4" class="Menu"> Menu 3 </li>
+    </div>
+
+    <br />
+
+    <div class="list_warp">
+        <h2> List Element with block display </h2>
+        <li id="list1" class="Menu2"> Menu 1 </li>
+        <li id="list2" class="Menu2"> Menu 2 </li>
+        <li id="list4" class="Menu2"> Menu 3 </li>
+    </div>
+
+    <br />
+
+    <div class="list_warp">
+        <h2> List Element with inline-block display </h2>
+        <li id="list1" class="Menu3"> Menu 1 </li>
+        <li id="list2" class="Menu3"> Menu 2 </li>
+        <li id="list4" class="Menu3"> Menu 3 </li>
+
+    </div>
+
+    <br />
+
+    <div class="wrapper">
+        <div id="diva" class="center">Div Box A</div>
+        <div id="divb" class="box">Div Box B</div>
+        <div id="divc" class="box">Div Box C</div>
+        <div id="divd" class="box">Div Box D</div>
+    </div>
+
+
+</div>
+
+</body>
+
+</html>

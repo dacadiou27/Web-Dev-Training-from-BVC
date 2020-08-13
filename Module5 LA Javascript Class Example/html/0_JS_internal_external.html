@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html land="en">
+
+<!--Date        : -->
+<!--Title       : -->
+<!--Description : -->
+<!--Use "Shift" + "Alt" +"F" to justify evething -->
+
+
+<head>
+
+    <title>JS internal inline external </title>
+
+    <!-- <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    -->
+
+    <!-- External set up of CSS style-->
+    <!-- <link rel="stylesheet" type"text/css" href="../css/style.css"> -->
+
+    <!-- Internal set up of style-->
+    <!-- <style type="text/css">
+
+    </style> -->
+
+    <!-- External set up of JS-->
+    <script type="text/javascript" src="../js/0_JS_internal_external.js"></script>
+
+
+</head>
+
+<body>
+    <section>
+        <h2>How to inlcude and use JS</h2>
+    </section>
+    Working with internal JS
+
+    <div id="msg">
+        ????????????? <!--do not display-->
+    </div>
+    <br />
+
+    <script type="text/javascript">
+        document.getElementById("msg").innerHTML = "Hello class - internal JS"
+    </script>
+
+    <p id="msg3">
+        <button onclick="hello2();"> Click me </button>
+    </p>
+    <script>
+        function hello2() {
+            // body...
+            document.getElementById("msg3").innerHTML="Hello class again!";
+            console.log("Hello from console.log");
+        }
+    </script>
+
+
+
+    Working with external JS
+    <div id="msg2">
+        !!!!!!!!!!!!!!!!!!!!!!!!
+    </div>
+    <br />
+
+    <button onclick="hello();"> Try me!</button>
+
+    <br />
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Country Code App</title>
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 style="text-align:center">Enter Country Info</h1>
+
+            <br />
+
+            <label for="code">Code : </label>
+            <input id="code" class="form-control" placeholder="Code">
+
+            <label for="country">Country : </label>
+            <input id="country" class="form-control" placeholder="Country">
+
+            <br />
+
+            <button class="btn btn-success" id="send"> Send Info </button>
+
+        </div>
+
+        <div id="countrieslist">
+
+        </div>
+
+        <script type="text/javascript">
+            //#send is the id of the button
+            $(() => {
+                $("#send").click(() => {
+                    var countryinfo ={code:$("#code").val(),country: $("#country").val()};
+                    postCountry(countryinfo);
+                })
+                getCountries();
+            })
+
+            //#countrieslis is the id of the div
+            function addCountry(countryinfo) {
+                $("#countrieslist").append(`<h3> ${countryinfo.code} ${countryinfo.country} </h3>`);
+            }
+
+            function getCountries() {
+                //$.get("./countryjson.json", (data)=>{
+                $.get("http://localhost:3000/countrieslist", (data)=>{
+                    //addCountry is the function defined above
+                    data.forEach(addCountry);
+                })
+             }
+
+             function postCountry(countryinfo){
+                //$.post("./countryjson.json", countryinfo);
+                $.post("http://localhost:3000/countrieslist", countryinfo);
+                //$.post("http://localhost:3000/",countryinfo); // Do not work
+             }
+
+        </script>
+</body>
+
+</html>

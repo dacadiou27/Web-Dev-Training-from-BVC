@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Date        :17th July 2020 -->
+<!--Title       :Learning Activity 2: JS Basics Program -->
+<!--Description : -->
+<!--Use "Shift" + "Alt" +"F" to justify evething -->
+<!--Comment Code Block Ctrl+K+C/Ctrl+K+U-->
+
+<head>
+
+    <title>Learning Activity 2: JS Basics Program</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <!-- External set up of style-->
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+    <!-- Internal set up of style-->
+    <style type="text/css">
+
+    </style>
+
+    <script type="text/javascript">
+
+    </script>
+
+</head>
+
+<body>
+    <h3>Learning Activity 2: JS Basics Program</h3>
+    <note>Note: In this learning activity, we will be reviewing how to use the console, declare variables, HTML
+        elements, inspect our code, conditional statements, loops, and functions in JS.</note>
+
+    <h4>Part I</h4>
+    <div class="exe">
+        <p class="question">Question 1</p>
+        <p class="instruction">Create a simple JS line of code that displays “Hello World” on the console.</p>
+        <p class="responce">Responce : </p>
+        <p> See console.</p>
+
+        <script type="text/javascript">
+            console.log("Hello World!")
+        </script>
+    </div>
+
+    <div class="exe">
+        <p class="question">Question 2</p>
+        <p class="instruction">Modify question 1 by adding a comment, variable, and attach it to an HTML element to
+            display the
+            message on browser.</p>
+        <p class="responce">Responce :<br /></p>
+        <label type="text">What is your name?</label>
+        <input type="text" id="name" onchange="displayMsg();" />
+        <div id="msg"></div>
+
+        <script type="text/javascript">
+            function displayMsg() {
+                msg.innerHTML = 'Hello World & Hello ' + document.getElementById("name").value + ' !';
+            }
+        </script>
+    </div>
+
+    <div class="exe">
+        <p class="question">Question 3</p>
+        <p class="instruction">Write a simple JS code that prints your full name.</p>
+        <p class="responce">Responce :<br /></p>
+
+        <label type="text">What is your first name?</label>
+        <input type="text" id="firstname" />
+        <label type="text">What is your last name?</label>
+        <input type="text" id="lastname" />
+        <input type="button" value="Submit" onclick="displayName()" />
+        <div id="msgName"></div>
+
+        <script type="text/javascript">
+            function displayName() {
+                msgName.innerHTML = 'Hello ' + document.getElementById("firstname").value + ' ' + document.getElementById("lastname").value + ' !';
+            }
+        </script>
+    </div>
+
+
+    <div class="exe">
+        <p class="question">Question 4</p>
+        <p class="instruction">Write a simple JS program that compares two values x and y. Assume x = 234 and y = 300.
+            Your program should display a message that indicates the smallest value and the largest value.</p>
+        <p class="responce">Responce :<br /></p>
+        <label type="text">What is your first value (x)?</label>
+        <input type="text" id="num1" placeholder="234" />
+        <label type="text">What is your second value (y)?</label>
+        <input type="text" id="num2" placeholder="300" />
+        <input type="button" value="Test" onclick="smallLarge(234,300);" />
+        <div id="comparaison"></div>
+
+        <script type="text/javascript">
+            function smallLarge(x, y) {
+                var x = parseInt(document.getElementById('num1').value);
+                var y = parseInt(document.getElementById('num2').value);
+                if (isNaN(x)) x = 234;
+                if (isNaN(y)) y = 300;
+
+                if (y >= x) comparaison.innerHTML = 'The smallest value is ' + x + '. The largest value is ' + y + ' !';
+                else comparaison.innerHTML = 'The smallest value is ' + y + '. The largest value is ' + x + ' !';
+            }
+        </script>
+    </div>
+
+    <div class="exe">
+        <p class="question">Question 5</p>
+        <p class="instruction">Write a simple JS program that compares three values x, y, z. You can give any random
+            number for
+            those three variables. The code should display which number has a larger value and which one has a smaller
+            value, among the three.</p>
+        <p class="responce">Responce :<br /></p>
+        <label type="text">What is your first value (x)?</label>
+        <input type="text" id="number1" placeholder="Random" />
+        <label type="text">What is your second value (y)?</label>
+        <input type="text" id="number2" placeholder="Random" />
+        <label type="text">What is your third value (z)?</label>
+        <input type="text" id="number3" placeholder="Random" />
+        <input type="button" value="Test" onclick="minMax();" />
+        <div id="result"></div>
+        <div id="result2"></div>
+
+        <script type="text/javascript">
+            function minNumber(number1, number2, number3) {
+                let min=number1;
+                if (number1 > number2) {
+                    min = number2;
+                    if (number2 > number3) min = number3;
+                }
+                else if (number1 > number3) {
+                    min = number3;
+                    if (number3 > number2) min = number2;
+                }
+                return min;
+            }
+
+            function maxNumber(number1, number2, number3) {
+                let max=number1;
+                if (number1 > number2) {
+                    max = number1;
+                    if (number3 > number1) max = number3;
+                }
+                else if (number2 > number1) {
+                    max = number2;
+                    if (number3 > number2) max = number3;
+                }
+                return max;
+            }
+            function minMax() {
+                let number1 = parseInt(document.getElementById('number1').value);
+                let number2 = parseInt(document.getElementById('number2').value);
+                let number3 = parseInt(document.getElementById('number3').value);
+                if (isNaN(number1)) number1 = Math.floor(Math.random() * 101);
+                if (isNaN(number2)) number2 = Math.floor(Math.random() * 101);
+                if (isNaN(number3)) number3 = Math.floor(Math.random() * 101);
+
+
+                let min, max;
+                min = minNumber(number1, number2, number3);
+                max = maxNumber(number1, number2, number3);
+                result.innerHTML = " number 1 = " + number1 + "<br/>" + "number 2 = " + number2 + "<br/>" + " number 3 = " + number3;
+                result2.innerHTML = "The smallest value is " + min + "<br/>" + "The largest value is " + max + "."
+            }
+        </script>
+    </div>
+
+    <div class="exe">
+        <p class="question">Question 6</p>
+        <p class="instruction">Write a simple JS program that displays all the numbers from 1 to 10 using a for loop.
+        <p class="responce">Responce :<br /></p>
+        <input type="button" value="Run" onclick="displayValues();" />
+        <div id="output"></div>
+
+        <script type="text/javascript">
+            function displayValues() {
+                let suite = " ";
+                for (let i = 1; i <= 10; i++) {
+                    suite += i + " ";
+                }
+                output.innerHTML = suite;
+            }
+
+        </script>
+    </div>
+
+    <div class="exe">
+        <p class="question">Question 7</p>
+        <p class="instruction">Write a program that display all even numbers from 0 to 10 using a for loop.</p>
+        <p class="responce">Responce :<br /></p>
+        <input type="button" value="Run" onclick="displayEvenValues();" />
+        <div id="output2"></div>
+
+        <script type="text/javascript">
+            function displayEvenValues() {
+                let suite = " ";
+                for (let i = 0; i <= 10; i++) {
+                    if (i % 2 == 0) {
+                        suite += i + " ";
+                    }
+                }
+                output2.innerHTML = suite;
+            }
+
+        </script>
+
+
+    </div>
+
+    <h4>Part II</h4>
+    <p class="question">Question 1</p>
+    <div class="exe">
+        <p class="instruction">Write a simple program that displays all odd numbers from 50 to 100 using a while loop.
+        </p>
+        <p class="responce">Responce :<br /></p>
+        <input type="button" value="Run" onclick="displayOddValues();" />
+        <div id="output3"></div>
+
+        <script type="text/javascript">
+            function displayOddValues() {
+                let oddsuite = " ";
+                let i = 50;
+                while (i <= 100) {
+                    if (i % 2 != 0) {
+                        oddsuite += i + " ";
+                    }
+                    i++;
+                }
+                output3.innerHTML = oddsuite;
+            }
+        </script>
+    </div>
+
+    <div class="exe">
+        <p class="question">Question 2</p>
+        <p class="instruction">Write a simple program that displays a triangle nested loop.</p>
+        <p class="responce">Responce :<br /></p>
+        <label type="text">How many rows for your triangle?</label>
+        <input type="text" id="rows" />
+        <input type="button" value="Run Triangle" onclick="triangle();" />
+        <div id="output4" style="text-align: center;"></div>
+
+        <script type="text/javascript">
+            function triangle() {
+                let rows = document.getElementById("rows").value;
+                let trigo = " ";
+                for (let i = 1; i <= rows; i++) {
+                    for (let j = 1; j <= i; j++) {
+                        trigo += "*";
+                    }
+                    trigo += "<br/>";
+                }
+                output4.innerHTML = trigo;
+            }
+
+        </script>
+    </div>
+
+    <div class="exe">
+        <p class="question">Question 3</p>
+        <p class="instruction"> Write a simple JS function that displays “Hello World”.
+        <p>
+        <p class="responce">Responce :<br /></p>
+        <input type="button" value="Greeting" onclick="gretting();" />
+        <div id="output5" style="text-align: center;"></div>
+
+        <script type="text/javascript">
+            function gretting() {
+                output5.innerHTML = '<h1 style="color:blue">Hello World!</h1>';
+            }
+
+        </script>
+
+    </div>
+    <div class="exe">
+        <p class="question">Question 4</p>
+        <p class="instruction">Write a simple web application that accepts your full name, and welcomes you saying,
+            “Welcome your
+            name”. Make sure you add some style to make it look good.</p>
+
+        <p class="responce">Responce :<br /></p>
+
+        <label type="text">What is your first name?</label>
+        <input type="text" id="fname" />
+        <label type="text">What is your last name?</label>
+        <input type="text" id="lname" />
+        <input type="button" value="Submit" onclick="displayName2()" />
+        <div id="msgGretting"></div>
+
+        <script type="text/javascript">
+            function displayName2() {
+                msgGretting.innerHTML = 'Welcome ' + document.getElementById("fname").value + ' ' + document.getElementById("lname").value + ' !';
+            }
+        </script>
+
+    </div>
+
+</body>
+
+</html>

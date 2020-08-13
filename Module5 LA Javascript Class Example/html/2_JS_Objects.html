@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Date        : -->
+<!--Title       : -->
+<!--Description : -->
+<!--Use "Shift" + "Alt" +"F" to justify evething -->
+<!--Comment Code Block Ctrl+K+C/Ctrl+K+U-->
+
+<!--
+            border: solid black;
+            margin-top: auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+    -->
+
+<head>
+    <meta charset="UTF-8" />
+
+    <title>JS Objects</title>
+
+    <style type="text/css">
+        #square {
+            margin: auto;
+            margin-top: 20%;
+            padding: 20px;
+            width: 400px;
+            border: solid black;
+            background: #ccc;
+            ;
+        }
+    </style>
+
+    <!-- External set up of JS-->
+    <script type="text/javascript" src="#"></script>
+
+    <script type="text/javascript">
+
+    </script>
+</head>
+</head>
+
+
+
+<body>
+
+    <div id="square">
+        <h3>This keyword example 2</h3>
+
+        <div>
+            <label> Course code : </label>
+            <input type="text" id="code">
+        </div>
+        </br>
+        <div>
+            <label> Course name : </label>
+            <input type="text" id="name">
+        </div>
+        </br>
+        <div>
+            <label> Course teacher : </label>
+            <input type="text" id="teacher">
+        </div>
+        </br>
+        <div>
+            <label> Class room : </label>
+            <input type="text" id="room">
+        </div>
+        </br>
+        <input type="button" value="Submit" onclick="getCourseDetails();">
+        <input type="button" value="SubmitDirect" onclick="getAndPasseCourseDetails();">
+        <input type="button" value="SubmitObject" onclick="objCall();">
+        <div id="output"></div>
+
+    </div>
+
+    <script type="text/javascript">
+
+        //Step 3 --> passing more data
+        function passingRoomDetails(courseRoom) {   //Passes room details
+            this.room = courseRoom;                 //Define a function which will work as a method AND a property
+        }
+
+        function passingCodeDetails(courseCode) {   //Passes code details
+            this.code = courseCode;                 //Define a function which will work as a method AND a property
+        }
+
+        //Step 2 --> passing data
+        function passingCourseDetails(courseName, courseTeacher) {//Passes course details  , courseCode, courseInfo
+            this.name = courseName;
+            this.teacher = courseTeacher;
+
+            this.codeInfo = passingCodeDetails;             //assign that method as a property only
+            this.roomInfo = passingRoomDetails;             //assign that method as a property only
+
+            //this.code = courseCode;
+            //this.room = courseInfo;
+        }
+
+        //Step 1 --> collect data
+        function getCourseDetails() { //get user input
+            var newCode = document.getElementById("code").value;
+            var newName = document.getElementById("name").value;
+            var newTeacher = document.getElementById("teacher").value;
+            var newRoom = document.getElementById("room").value;
+
+            var myCourse = new passingCourseDetails(newName, newTeacher);  // create a new variable which call a method?????
+            myCourse.codeInfo(newCode);
+            myCourse.roomInfo(newRoom);
+            //myCourse.roomInfo("45"); 
+
+            //var myCourse = new passingCourseDetails(newName, newTeacher, newCode, newRoom);
+
+            document.getElementById("output").innerHTML =
+                "</br> The course name is:  " + myCourse.name
+                + "</br> The course teacher is:     " + myCourse.teacher
+                + "</br> The course code is:    " + myCourse.code
+                + "</br> The course room is:    " + myCourse.room;
+        }
+
+        //Step 1/2/3 combined
+        function getAndPasseCourseDetails() { //get user input
+            directCode = document.getElementById("code").value;         //this.directCode = document.getElementById("code").value;
+            directName = document.getElementById("name").value;         //this.directName = document.getElementById("name").value;
+            directTeacher = document.getElementById("teacher").value;   //this.directTeacher = document.getElementById("teacher").value;
+            directRoom = document.getElementById("room").value;         //this.directRoom = document.getElementById("room").value;
+
+            document.getElementById("output").innerHTML =
+                "</br> The course name is:  " + directName             //"</br> The course name is:  " + this.directName
+                + "</br> The course teacher is:     " + directTeacher //+ "</br> The course teacher is:     " +  directTeacherv
+                + "</br> The course code is:    " + directCode        //+ "</br> The course code is:    " +  directCode 
+                + "</br> The course room is:    " + directRoom;      //+ "</br> The course room is:    " +  directRoom ;
+        }
+
+        // use Object
+        let objCourse = {
+            objCoursePptCode : document.getElementById("code").value,
+            objCoursePptName : document.getElementById("name").value,
+            objCoursePptTeacher : document.getElementById("teacher").value,
+            objCoursePptRoom : document.getElementById("room").value,
+            objPptDescription : function () {
+                return "</br> The course name is: " + this.objCoursePptName
+                    + "</br> The course teacher is: " + this.objCoursePptTeacher
+                    + "</br> The course code is: " + this.objCoursePptCode
+                    + "</br> The course room is: " + this.objCoursePptRoom;
+                
+            }
+        };
+
+        function objCall(){
+            console.log(objCourse.objPptDescription())z
+            document.getElementById("output").innerHTML = objCourse.objPptDescription();
+        }
+
+    </script>
+
+    <!--
+    <script type="text/javascript">
+        this.name = "Web-programming";  // Attached to the window
+
+        let name = "Web";   //Global variable
+
+        console.log(this.name);
+        console.log(name)
+
+        //////////////////////////////////////////////
+
+        var obj = {
+            name: 'Dima',
+        };
+
+        function inst() {
+            return this.name;
+        }
+
+        console.log(inst()); //Global function with undefined value
+
+        /////////////////////////////////////////////////
+
+        var user = {
+            fName: "Jhon",
+            sayHi: function () {
+                //console.log("Hi " + this.fName + this);  //this = user object
+                return "Hi " + this.fName + this;  //this = user object
+            }
+        };
+
+        //user.sayHi();
+        console.log(user.sayHi());
+
+
+        function sayHello(user) {
+            console.log("Hello " + user.fName + this);
+        } //this = window object
+
+        sayHello(user);
+
+        /////////////////////////////////////////////////
+        var webCourse = {
+            code: "SODV9105",
+            name: "Web Programming Basic",
+            getFullName: function () {
+                return this.code + ' - ' + this.name + ' printed from ' + this;
+            }
+        }
+
+        console.log(webCourse.getFullName());
+
+        function printCourse(webCourse) {
+            console.log(webCourse.code + ' - ' + webCourse.name + ' printed from ' + this);
+        }
+
+        printCourse(webCourse);
+
+        /////////////////////////////////////////////////
+        //Passing value
+
+        function book(bname, bauthor) {
+            this.name = bname;
+            this.author = bauthor;
+            this.displayByName = function () {
+                return this.name + " by " + this.author;
+            };
+        }
+
+        var book1 = new book("It is the holidays!", "Dany Cadiou"); //obj ins
+
+        console.log(book1.displayByName());
+
+    </script>
+-->
+
+</body>
+
+</html>

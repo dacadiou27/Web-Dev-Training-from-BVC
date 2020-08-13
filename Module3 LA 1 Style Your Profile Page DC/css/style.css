@@ -1,0 +1,73 @@
+
+
+
+body  {
+    background-image: url("../img/IMG_2665.jpg");
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-color:white;
+}
+
+h2 {
+    font-family:'Brush Script MT';
+    font-size: xx-large;
+}
+
+.page{
+    background-color: black;
+    color:white;
+    width: 1000px;
+    margin: auto;
+    padding: 20px 20px 20px 20px;
+    font-family: Verdana;
+}
+
+.page_header{
+    padding: 40px 40px 40px 40px;
+}
+
+.header_left{
+    float:left;
+    padding: 100px 40px 100px 40px;
+}
+
+
+.header_right{
+    float:right;
+    padding: 0px 40px 0px 40px;
+}
+.centered {
+    position: A;
+    text-align: center;
+    top: 35%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+  }
+
+.header_low{
+    clear: both;
+}
+
+.page_content{
+    clear: both;
+}
+
+.paragraph{
+    margin-left: 15px;
+    font-family: Verdana;
+}
+
+.legend{
+    font-style: italic;
+    text-align: center;
+    font-size: small;
+    color: aquamarine;
+}
+
+.photo_table{
+    align:center;
+}
+
+#page_title{
+    font-style: italic;
+    text-align: center;
+}

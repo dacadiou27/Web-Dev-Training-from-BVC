@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Date        : -->
+<!--Title       : -->
+<!--Description : -->
+<!--Use "Shift" + "Alt" +"F" to justify evething -->
+
+
+<head>
+
+    <title>Statements exe</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    -->
+
+    <!-- External set up of style-->
+    <link rel="stylesheet" type="text/css" href="#">
+
+    <!-- Internal set up of style-->
+    <style type="text/css">
+        .exe {
+            border: solid black 3px;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        function testNumber() {
+            let number = parseFloat(document.getElementById('numbertotest').value);
+            if (number > 0) document.getElementById('testmsg').innerHTML = "your number is positive";
+            else if (number < 0) document.getElementById('testmsg').innerHTML = "your number is negative";
+            else if (number == 0) document.getElementById('testmsg').innerHTML = "your number is nil";
+            else document.getElementById('testmsg').innerHTML = "your entry is not valid";
+        }
+
+        function numberMin() {
+            let number1 = parseInt(document.getElementById('numbertosort1').value);
+            let number2 = parseInt(document.getElementById('numbertosort2').value);
+            let number3 = parseInt(document.getElementById('numbertosort3').value);
+            let min = number1;
+            try {
+                errormsg.innerHTML = "";
+                if (number1 > number2) {
+                    min = number2;
+                    if (number2 > number3) min = number3;
+                }
+                else if (number1 > number3) min = number3;
+
+                else if (number1 == "" || number2 == "" || number3 == "") {
+                    throw "<h3 style='color:red'>Please enter a number for/and #1,#2,#3</h3> ";
+                }
+                else if (isNaN(number1) || isNaN(number2) || isNaN(number3)) {
+                    throw "<h3 style='color:red'>The input for/and  #1,#2,#3 is not a number!</h3>";
+                }
+            }
+            catch (error) {
+                errormsg.innerHTML = error;
+            }
+            finally {
+                finalmsg.innerHTML = "<h3 style='color:green'>You checked the smallest number!</h3>";
+            }
+
+
+            document.getElementById('minmsg').innerHTML = "<br/>Your smallest number is : " + min;
+        }
+
+        function runSuite() {
+            let maxnumber = parseInt(document.getElementById('maxnumber').value);
+            let suite = ":";
+
+            for (let i = maxnumber; i >= 1; i--) {
+                suite = suite + "  " + i;
+                console.log("Your suite is " + i);
+            }
+            document.getElementById('runmsg').innerHTML = "Your suite is " + suite;
+        }
+
+        function evenNumberDisplay() {
+            let minnumber = parseInt(document.getElementById('min').value);
+            let maxnumber = parseInt(document.getElementById('max').value);
+            let eNumbers = ":";
+
+            for (let i = minnumber; i <= maxnumber; i++) {
+                if (i % 2 == 0) {
+                    eNumbers = eNumbers + "  " + i;
+                    console.log("even numbers " + i);
+                    //document.write (i + "  ");
+                }
+            }
+            document.getElementById('envennumbersmsg').innerHTML = "Your even numbers list " + eNumbers;
+        }
+
+        function daySwitch() {
+            let dayID = parseInt(document.getElementById('ID').value);
+            let day;
+            switch (dayID) {
+                case 1:
+                    day = "Monday";
+                    break;
+                case 2:
+                    day = "Tuesday";
+                    break;
+                case 3:
+                    day = "Wednesday";
+                    break;
+                case 4:
+                    day = "Thursday";
+                    break;
+                case 5:
+                    day = "Friday";
+                    break;
+                case 6:
+                    day = "Saturday";
+                    break;
+                case 7:
+                    day = "Sunday";
+                    break;
+                default:
+                    day = ("-Invalid number! entry must be a number between 1 and 7!-");
+            }
+            document.getElementById('daymsg').innerHTML = "Your day is " + day;
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <main>
+        <h3 style="text-align:center">Work on the classroom activities and discuss it in class</h3>
+        <div class="exe">
+            <p>Write a program that takes 1 input and checked if it is +ve or -ve</p>
+            <label> Provide Input Number : </label>
+            <input type="text" id="numbertotest" />
+            <input type="button" id="test" value="Test" onclick="testNumber();" />
+            <div id="testmsg"></div>
+            <br />
+        </div>
+
+        <div class="exe">
+            <p>Write a program that takes 3 input and display the smallest one</p>
+            <label> Provide Input Number 1: </label>
+            <input type="text" id="numbertosort1" /><br />
+            <label> Provide Input Number 2: </label>
+            <input type="text" id="numbertosort2" /><br />
+            <label> Provide Input Number 3: </label>
+            <input type="text" id="numbertosort3" />
+            <div id="minmsg"></div>
+            <div id="errormsg"></div>
+            <div id="finalmsg"></div>
+
+            <input type="button" id="test" value="Test" onclick="numberMin();" />
+        </div>
+
+        <div class="exe">
+            <p>Write a program that display the number 10 (or inputed) to 1</p>
+            <label> Provide a Max number: </label>
+            <input type="text" id="maxnumber" placeholder="10" />
+            <div id="runmsg"></div>
+            <input type="button" id="run" value="Run" onclick="runSuite();" />
+        </div>
+
+
+        <div class="exe">
+            <p>Write a program that display all even numbers from 20 to 50</p>
+            <label type="text"> Min : </label>
+            <input type="text" id="min" placeholder="20" />
+            <label type="text"> Max :</label>
+            <input type="text" id="max" placeholder="50" />
+            <div id="envennumbersmsg"></div>
+            <input type="button" id="envennumbers" value="Run" onclick="evenNumberDisplay()">
+
+        </div>
+
+        <div class="exe">
+            <p>Write a program that checks all the 7 days (Monday Tuesday ....) (your program should take number and
+                display the name of the day)</p>
+            <label type="text"> Day ID to display : </label>
+            <input type="text" id="ID" placeholder="# between 1 & 7" />
+            <div id="daymsg"></div>
+            <input type="button" id="day" value="Display" onclick="daySwitch()">
+        </div>
+
+        <div class="exe">
+            <p>Display array of Elements</p>
+            <p>Array output for Each (array1): <span id="array1"></span></p>
+            <p>Array output for Each (array3): <span id="array3"></span></p>
+            <p>Array output for Each (array4): <span id="array4"></span></p>
+            <p>Array output for Each (array5): <span id="array5"></span></p>
+            <p>Array output for Each (array6): <span id="array6"></span></p>
+            <p>Array output for Each (array7): <span id="array7"></span></p>
+            <p>Array output for Each (array8): <span id="array8"></span></p>
+            <p>Array output for Each (array9): <span id="array9"></span></p>
+        </div>
+
+        <div class="exe">
+            <p>Write a program to add element to an array</p>
+            <label type="text"> Enter info to append to array : </label>
+            <input type="text" id="addE" placeholder="elemet to add" />
+            <div id="newarray"></div>
+            <input type="button" id="add" value="Add Element to Front" onclick="addFront();">
+            <input type="button" id="add" value="Add Element to End" onclick="addEnd();">
+            <input type="button" id="add" value="Add Element to 2nd" onclick="addInMiddle();">
+            <input type="button" id="add" value="Sort by Length" onclick="sorting();">
+            <input type="button" id="add" value="Remove Duplicate" onclick="removeDuplicate();">
+            <input type="button" id="add" value="Find Color" onclick="findColor();">
+            <input type="button" id="add" value="Test List" onclick="everyColor();">
+            <input type="button" id="add" value="Test 7 char color" onclick="someColor();">
+            <input type="button" id="add" value="Merge color table" onclick="mergeColor();">
+            <input type="button" id="add" value="Remove color" onclick="deleteColor();">
+
+            <h2>List of colors</h2>
+            <ol id="colorDisplay"></ol>
+            <p id="sortedColorsDisplay"></p>
+            <p id="findColorsDisplay"></p>
+            <p id="removeColorsDuplicate"></p>
+            <p id="findcolorid"></p>
+            <p id="everycolorid"></p>
+            <p id="somecolorid"></p>
+            <p id="reducecolorid"></p>
+            <p id="removeColor"></p>
+
+        </div>
+        <script type="text/javascript">
+            // because of span need to put the script at the bottom 
+            var numbers = [75, 22, 10, 9];
+            numbers.forEach(function myfunction() {
+                array1.innerHTML = numbers;
+            });
+
+            document.write("Array output 2: ");
+            numbers.forEach(function (element) {
+                document.write(element + " ");
+            })
+
+            numbers.forEach(function (element) {
+                array3.innerHTML += element + ", ";
+            })
+
+            numbers.forEach(function (element) {
+                array4.innerHTML += "<li>" + element + "</li>";
+            })
+
+            function getArray(item) {
+                return item;
+            }
+            document.getElementById('array5').innerHTML = numbers.map(getArray);
+
+            document.getElementById('array6').innerHTML = numbers.map(function (item) { return item });
+
+            for (const e of numbers) {
+                if (e % 2 == 0) {
+                    document.getElementById('array7').innerHTML += e + " ";
+                }
+            }
+
+            function evenNumbers() {
+                for (const e of numbers) {
+                    if (e % 2 == 0) {
+                        document.getElementById('array8').innerHTML += e + " ";
+                    }
+                }
+            }
+            evenNumbers();
+
+            /////////////////////////////////
+            let colors = ["Red", "Yellow", "Green", "Black"];
+
+            colors.forEach(function (element) {
+                var li = document.createElement('div');
+                colorDisplay.appendChild(li);
+                li.innerHTML += element;
+            })
+
+            function addFront() {
+                var newColor = document.getElementById('addE').value;
+                colors.unshift(newColor);
+                var li = document.createElement("div");
+                colorDisplay.insertBefore(li, colorDisplay.childNodes[0]);
+                li.innerHTML += newColor;
+            }
+
+            function addEnd() {
+                var newColor = document.getElementById('addE').value;
+                colors.push(newColor);
+                var li = document.createElement("div");
+                colorDisplay.appendChild(li, colorDisplay.childNodes[0]);
+                li.innerHTML += newColor;
+            }
+
+            function addInMiddle() {
+                var newColor = document.getElementById('addE').value;
+                colors.splice(2, 0, newColor);
+                var li = document.createElement("div");
+                colorDisplay.insertBefore(li, colorDisplay.childNodes[2]);
+                li.innerHTML += newColor;
+            }
+
+            function sorting() {
+                var sortedColors = colors.sort(function (a, b) {
+                    if (a.length < b.length)
+                        return -1;
+                    if (a.length > b.length)
+                        return 1;
+                });
+                sortedColorsDisplay.innerHTML = sortedColors;
+            }
+
+            //create function using different build in array method
+            //color.filter(filter)           
+            function removeDuplicate() {
+                uniqueColorArray = colors.filter(function (item, pos) {
+                    return colors.indexOf(item) == pos
+                })
+                removeColorsDuplicate.innerHTML = uniqueColorArray;
+            }
+
+
+
+            //color.find(test)
+            function findColor() {
+                var RGB = document.getElementById('addE').value;
+                var colorToFind = colors.find(element => element==RGB);
+
+                //console.log(colorToFind);
+
+                if (colorToFind == RGB) {
+                    return findcolorid.innerHTML = "The color is already in the list !";
+                }
+                else return findcolorid.innerHTML = "The color is not in the list !";
+            }
+
+            //color.every(test)
+            function everyColor() {
+                var colorValid = colors.every(element => element.length!=0);
+
+                console.log(colorValid);
+
+                if (colorValid) {
+                    return everycolorid.innerHTML = "No color are empty!";
+                }
+                else return everycolorid.innerHTML = "There is an empty color element in the list";
+            }
+
+            //color.some(test)
+                function someColor() {
+                var colorValid = colors.every(element => element.length >= 7);
+
+                console.log(colorValid);
+
+                if (colorValid) {
+                    return somecolorid.innerHTML = "There is /arre color name(s) with 7 characters or more!";
+                }
+                else return somecolorid.innerHTML = "No color names are 7 character or more!";
+            }
+
+            //color.reduce(aggregate)
+            function mergeColor()
+            {
+                var RGB = document.getElementById('addE').value;
+                var allColors = colors.reduce((accumulator, currentValue) => accumulator + " " + currentValue);
+
+                console.log(allColors);
+
+               return reducecolorid.innerHTML = allColors;
+            }
+
+            //modify the sort function to remove the duplicates
+
+
+
+            //create a function to delete element from color
+            function deleteColor() {
+                var RGB = document.getElementById('addE').value;
+                colors = colors.filter(color => color !=RGB);
+                removeColor.innerHTML = colors;
+            }
+
+            /////////////////////////////////////
+
+        </script>
+
+    </main>
+</body>
+
+</html>

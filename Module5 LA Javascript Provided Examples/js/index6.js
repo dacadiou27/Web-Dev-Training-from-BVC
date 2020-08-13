@@ -1,0 +1,1 @@
+exports.addtion = require('./sum');//exports is global object that refers to the module.exports

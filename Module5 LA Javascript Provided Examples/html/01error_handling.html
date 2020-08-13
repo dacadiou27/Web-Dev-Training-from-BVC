@@ -1,0 +1,74 @@
+﻿<html>
+    <head>
+        <title>Error handling ex1</title>
+    </head>
+    <body>
+       
+        <h2>Error handling try, catch, finally and throw in js</h2>
+        <input id="demo"><button type="button" onclick="testFunction();">check</button>
+        <p id="p01"></p>
+        <p id="error_msg"></p>
+        <script>
+            //try, catch finally and throw
+            //Type error, range error, reference error, Syntax error, URI error, Eval error
+            
+            //Ex 1 using try catch with custom message
+            function testFunction() {
+            var message, x;
+            message = document.getElementById("p01");
+            message.innerHTML = "";
+            x = document.getElementById("demo").value;
+            try { 
+                if(x == "")  throw " x empty";
+                if(isNaN(x)) throw "not a number";
+                x = Number(x);
+                if(x < 5)  throw "too low";
+                if(x > 10)   throw "too high";
+                if(5<x<10) throw " is good value"
+            }
+            catch(err) {
+                message.innerHTML = "Input is " + err;
+            }
+            }
+
+           // Ex2 
+            const a = 5
+            function custom_msg(){//custom msg
+                console.log("var is not defined please check your code")
+            }
+            try {
+                console.log(b) // b is not defined, so throws an error
+            } catch (err) {
+                //console.error(err) // will log the error with the error stack
+                custom_msg()
+
+            } finally {
+                console.log( "val of a = "+ a); // will always get executed
+                //genral message to invite users to come back and visit your page again or to proceed 
+            }
+
+            // EX 3 use a variable that is not defined in the code
+            try {
+                a = a + b;
+                } catch (error) {
+                   console.log(error.name + "  " + error.message); // "ReferenceError" , b is not defined
+                }finally{
+                    console.log("declare a and b before you use it")
+                }
+            //EX 4
+            //greeting function is not defined, display the error in the html element
+            function sum(){
+                try {
+                greeting("Welcome guest!" + name);
+                }
+                catch(err) {
+                document.getElementById("error_msg").innerHTML = err.message;
+                }
+            }
+            sum();
+
+
+        </script>
+
+    </body>
+</html>

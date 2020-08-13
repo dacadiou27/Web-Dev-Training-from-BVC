@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title >Responsive</title>
+    <meta charset="utf-8">
+    <meta name="viewport"content="width=device-width , intiale scale =1.0">
+
+    <style type="text/css">
+        #wrapper{
+            width:70%;
+            margin-right: 0 auto;
+            max-width: 960px;
+            min-width: 240px;
+            background-color: royalblue;
+        }
+        #left{
+            float:left;
+            width: 50%;
+            background-color: red;
+        }
+        #right{
+            float:left;
+            width: 50%;
+            background-color: chocolate;
+        }
+
+        /*when the screen is above 680px --> change the body as follow*/
+        @media screen and (max-width:680px){
+            body{
+                background-color: green;
+            }
+            #right{
+                background-color: rebeccapurple;
+            }
+        }
+        /*when the screen is bellow 680px --> change the body as follow*/
+        @media screen and (min-width:680px){
+            body{
+                background-color: yellow;
+            }
+            #right{
+                background-color: magenta;
+            }
+         }
+    </style>
+
+</head>
+
+
+<body>
+    <div id="wrapper">   
+        <p> test</p>
+
+        <br/>
+
+        <div id="left">   
+            <p> test</p>
+        </div>
+
+        <div id="right">   
+            <p> test</p>
+        </div>
+
+        <br/>
+
+        <p> test</p>
+    </div>
+</body>
+
+</html>

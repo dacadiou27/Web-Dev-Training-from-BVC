@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--Date 14th June 2020-->
+    <!--Module 3 Lesson 3 DC-->
+    <!--My first Mini Project-->
+
+    <title>M3 L3 DC Miniproject</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    -->
+
+
+    <!-- External set up of style-->
+    <link rel="stylesheet" type"text/css" href="../css/style.css">
+
+    <!-- Internal set up of style-->
+    <style>
+        body {
+            background-image: url("../img/Star_small.png");
+            background-size: repeat;
+            background-color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="banner">
+                <img class="image" src="../img/banner.jpg" alt="banner" />
+            </div>
+            <div class="title">
+                Dany's Profile
+            </div>
+            <div class="menu">
+                <a href="home.html">home</a>
+                <a href="profession.html">profession</a>
+                <a href="area_of_interest.html">area of interest</a>
+                <a class="active" href="movie.html">movies</a>
+                <a href="gallery.html">gallery</a>
+                <a href="contact_us.html">contact us</a>
+            </div>
+        </div>
+
+        <div class="content_home" style="font-family: 'arial'" ;>
+            <div class="content_mv_left">
+                <h1>
+                    <p id="Page header" align="center">SCOOB!</p>
+                </h1>
+                <img class="portrait" src="../img/cineplex.webp" alt="Scoob!" height="300" border="3" />
+                <br />
+            </div>
+
+            <div class="content_mv_right">
+                <p>With hundreds of cases solved and <b>adventures</b> shared, Scooby and the gang face their
+                    biggest,most challenging mystery ever a plot to unleash the ghost dog Cerberus upon the world. As
+                    they race to stop this global <b>dog-pocalypse</b>, the gang discovers that <b>Scooby</b> has a
+                    secret legacy and an epic destiny greater than anyone could have imagined.</p>
+                <br />
+            </div>
+
+            <div class="content_home" style="font-family: 'arial'" ;>
+                <div class="content_mv_left">
+                    <h2>Director</h2>
+                    <p id="Director"></p>
+                    <a href="https://en.wikipedia.org/wiki/Spike_Brandt_and_Tony_Cervone" target="_blank">Tony Cervone
+                    </a>
+                    </p>
+
+                    <h2>Cast</h2>
+                    <p id="Cast">
+                        <a href="https://en.wikipedia.org/wiki/Kiersey_Clemons" target="_blank">Kiersey Clemons </a> as
+                        Dee
+                        Dee Skyes,
+                        <a href="https://en.wikipedia.org/wiki/Zac_Efron" target="_blank">Zac Efron </a> as Fred Jones,
+                        <a href="https://en.wikipedia.org/wiki/Will_Forte" target="_blank">Will Forte </a> as Shaggy
+                        Rogers,
+                        <a href="https://en.wikipedia.org/wiki/Jason_Isaacs" target="_blank">Jason Isaacs </a> as Dick
+                        Dastardly,
+                        <a href="https://en.wikipedia.org/wiki/Ken_Jeong" target="_blank">Ken Jeong </a> as Dynomutt &
+                        Dog
+                        Wonder,
+                        <a href="https://en.wikipedia.org/wiki/Tracy_Morgan" target="_blank">Tracy Morgan </a> as
+                        Captain
+                        Caveman,
+                        <a href="https://en.wikipedia.org/wiki/Gina_Rodriguez" target="_blank">Gina Rodriguez </a> as
+                        Velma
+                        Dinkley,
+                        <a href="https://en.wikipedia.org/wiki/Amanda_Seyfried" target="_blank">Amanda Seyfried </a> as
+                        Daphne Blake,
+                        <a href="https://en.wikipedia.org/wiki/Mark_Wahlberg" target="_blank">Mark Wahlberg </a> as Blue
+                        Falcon,
+                        <a href="https://en.wikipedia.org/wiki/Frank_Welker" target="_blank">Frank Welker </a> as
+                        <b>Scooby-Doo</b>,
+                        <a href="https://www.imdb.com/name/nm7567556/" target="_blank">Ariana Greenblatt </a> as Young
+                        Velma,
+                        <a href="https://en.wikipedia.org/wiki/Pierce_Gagnon" target="_blank">Pierce Gagnon </a> ,
+                    </p>
+                </div>
+
+                <div class="content_mv_right">
+                    <img class="portrait" src="../img/99e8676b464da9ba6cb9915620fb4b9d.jpg" alt="Cast" border="3"
+                        height="200" /><br />
+                    <p align="center"><a
+                            href="https://www.instagram.com/p/BvZBucFhbei/?utm_source=ig_share_sheet&igshid=1ig68m30cboxl"
+                            target="_blank">Save from instragram.</a></p>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="content_mv_header">
+            <br />
+            <br />
+            <br />
+            <br />
+            <hr />
+            <h2>Genre</h2>
+            <p id="Genre">Comedy</p>
+
+            <h2>Runtime</h2>
+            <p id="Runtime">99 Minutes</p>
+
+            <h2>Schedule & Pricing</h2>
+            <table border="10" width="400" align="center">
+                <tr>
+                    <!--issues with colspam & rowspam-->
+                    <th rowspan="2"> Day </th>
+                    <th colspan="2"> Time </th>
+                </tr>
+                <tr>
+                    <th> AM </th>
+                    <th> PM </th>
+                <tr>
+                    <td> Monday </td>
+                    <td> 9:30 </td>
+                    <td> 2:30 </td>
+                </tr>
+                <tr>
+                    <td> Tuesday </td>
+                    <td> 9:30 </td>
+                    <td> 2:30 </td>
+                </tr>
+                <tr>
+                    <td> Wednesday </td>
+                    <td> 9:30 </td>
+                    <td> 2:30 </td>
+                </tr>
+                <tr>
+                    <td> Thursday </td>
+                    <td> 9:30 </td>
+                    <td> 2:30 </td>
+                </tr>
+                <tr>
+                    <td> Friday </td>
+                    <td> 9:30 </td>
+                    <td> 2:30 </td>
+                </tr>
+                <tr>
+                    <td> Saturday </td>
+                    <td> 10:30 </td>
+                    <td> 3:30 </td>
+                </tr>
+                </tr>
+                <td> Sunday </td>
+                <td> 10:30 </td>
+                <td> 3:30 </td>
+                </tr>
+                </tr>
+                <th> Price </th>
+                <td> <b>$10 </b></td>
+                <td> <b>$12 </b></td>
+                </tr>
+                <tr>
+                    <caption>Weekly Schedule</caption>
+            </table>
+
+            <h2>Closed Captions</h2>
+            <p id="Closed Captions">
+            <table border="1" align="center">
+                <td>CC</td>
+                <td>Available</td>
+            </table>
+            </p>
+
+            <h2>Rental Period</h2>
+            <p id="Rental Period">You have 30 days from the date of purchase to start watching your rental, and 48 hours
+                to finish it once you've started watching</p>
+        </div>
+
+        <div class="wrapper">
+            <hr / color="blue" thick="3">
+            <div class="menu_footer" style="text-transform: uppercase;">
+                <a href="home.html">home</a> |
+                <a href="profession.html">profession</a> |
+                <a href="area_of_interest.html">area of interest</a> |
+                <a href="movie.html">movies</a> |
+                <a href="gallery.html">gallery</a> |
+                <a href="contact_us.html">contact us</a>
+                <button onclick="window.print()" style="  float:right;">Print this page</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <hr / color="grey" thick="1">
+        <p align=center style="font-family: Trattatello, fantasy";>Thank you for visiting!</p>
+    </footer>
+
+
+    </div>
+
+</body>
+
+</html>

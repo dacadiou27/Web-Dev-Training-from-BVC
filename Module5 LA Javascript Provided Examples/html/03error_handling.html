@@ -1,0 +1,47 @@
+﻿<html>
+    <head>
+        <title>Error Handling Ex3</title>
+    </head>
+    <body>
+        <form>
+            <label for="email"> Email: </label> <br>
+            <input id="email" type="text"> <br>
+        </form>
+
+        <button class="btn" onclick="validateEmail()">Submit</button>
+        <div id="msg">
+        
+        </div>
+
+        <script>
+        function checkEmail()
+        {
+            var email = document.getElementById('email').value;
+            if(email.length == 0)
+            {
+                throw new Error('please provide an email address');//custom message
+            }
+            else if(email.indexOf('@')===-1)
+            {
+                throw  new Error('please provide a valid email address');
+            }
+        document.getElementById('msg').innerHTML = "<h3 style='color:green'> Your email is: </h3>" + email;
+        }
+        
+        function validateEmail()
+        {
+            try
+            {
+                checkEmail();
+            }
+            catch(error)
+            {
+                document.getElementById('msg').innerHTML = 
+                    "<h3 style='color:red'> Warning: </h3>" + error.message;
+            }
+        }
+        
+        </script>
+    </body>
+</html>
+

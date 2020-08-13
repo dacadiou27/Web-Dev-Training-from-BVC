@@ -1,0 +1,1 @@
+exports.myText = "Welcome from the demo module!"

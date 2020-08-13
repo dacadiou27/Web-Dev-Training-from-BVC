@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Date        : -->
+<!--Title       : -->
+<!--Description : -->
+<!--Use "Shift" + "Alt" +"F" to justify evething -->
+
+
+<head>
+
+    <title>Statements</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    -->
+
+    <!-- External set up of style-->
+    <link rel="stylesheet" type="text/css" href="#">
+
+    <!-- Internal set up of style-->
+    <style type="text/css">
+
+    </style>
+
+    <script type="text/javascript">
+        // if
+        // if else
+        // nested if
+        // if else if
+
+        //Example of if statement
+        document.write("If statement <br />");
+
+        function checkAge() {
+            var age = 19;
+            if (age >= 18) {
+
+                document.write("You can vote!");
+            }
+            document.write("<br />Check completed!");
+        }
+
+        checkAge();
+
+        //Example of if else statement
+
+        document.write("<br /><br />If & Else statement <br />");
+        function checkAge2() {
+            var age = 14;
+            if (age >= 18) {
+                document.write("You can vote!");
+            }
+            else {
+                document.write(age + " is too young, You can not vote!");
+            }
+            document.write("<br />Check completed!");
+        }
+        checkAge2();
+
+        //Example of nested if statement
+
+        document.write("<br /><br />Nested If statement <br />");
+        function checkAge3() {
+            var age = 23;
+            if (age >= 18) {
+                document.write("You can vote!");
+                if (age >= 21) {
+                    document.write(age + " is young, but You can drink!");
+                }
+            }
+            else {
+                document.write(age + " is too young, you can not vote!");
+            }
+            document.write("<br />Check completed!");
+        }
+        checkAge3();
+
+        //Example of if /else if statement
+
+        document.write("<br /><br />If /else if statement <br />");
+        function checkAge4() {
+            //const agePerson = prompt("Please enter your age", "");
+            const agePerson = document.getElementById("age").value;
+
+            if (agePerson >= 18) {
+                document.write("You can vote!");
+                if (agePerson >= 21) {
+                    document.write(agePerson + " is young, but You can drink!");
+                }
+            }
+            else if (agePerson >= 16) {
+                document.write(agePerson + " is young, but You work!");
+            }
+            else {
+                document.write(agePerson + " is too young, you can not vote!");
+            }
+            document.write();
+        }
+
+
+        // Switch
+        /*document.write("<br />Switch statement <br />");
+
+        const quantity = parseInt(prompt("Enter quantity :"));
+
+        switch (quantity) {
+            case 1:
+                document.write("Quantity is 1!");
+                break;
+            case 2:
+                document.write("Quantity is 2!");
+                break;
+            case 10:
+                document.write("Quantity is 10!");
+                break;
+            default:
+                document.write("Quantity is not 1,2,or 10!");
+        }*/
+
+        function doMAth(operator) {
+            const number1 = parseInt(document.getElementById('number1').value);
+            const number2 = parseInt(document.getElementById('number2').value);
+
+            let result;
+
+            switch (operator) {
+                case "+":
+                    result = number1 + number2;
+                    break;
+                case "-":
+                    result = number1 - number2;
+                    break;
+                case "*":
+                    result = number1 * number2;
+                    break;
+                case "/":
+                    result = number1 / number2;
+                    break;
+                default:
+                    document.write("Bad operator!");
+            }
+            console.log(number1 + operator + number2 + "=" + result);
+            document.getElementById("result").innerHTML = number1 + operator + number2 + "=" + result + "<br /><br />" ;
+        }
+
+        //Example of For loop statement
+        document.write("<br /><br />for loop statement <br />");
+
+        for (var i = 10; i >= 0; i--) {
+            document.write("i = " + i + "<br/>");
+        }
+        document.write("<br />for in loop statement <br />");
+        var myObject = {
+            number1: 1,
+            number2: 4,
+            number3: 6,
+            number4: 8,
+            number5: 10
+        }
+
+        for (var property in myObject) {
+            document.write(property + " : " + myObject[property] + " " + "<br />");
+        }
+
+        document.write("<br />for each loop statement <br />");
+        const fruits = ["Apple", "Orange", "Banana", "Kiwi", "Mango", "Pear"];
+
+        for (const e of fruits) {
+            document.write(e + " is an element of the array <br />");
+        }
+
+        document.write("<br />foreach() method")
+        fruits.forEach(function(e) {
+            document.write("<br />This is from For Each method " + e);
+        })
+
+        //Example of While loop statement
+        document.write("<br /><br />While loop statement <br />");
+        var counts = 0;
+        while(counts <= 10) {
+            document.write("The count is :" + counts + "<br/>");
+            counts++;
+        }
+
+        document.write("<br /><br /> Do/While loop statement <br />");
+        var counts = 0;
+        do {
+            document.write("The count is :" + counts + " with a Do/While loop<br/>");
+            counts++;
+        }
+        while (counts <= 5)
+
+
+    </script>
+
+</head>
+
+<body>
+    <main>
+
+        <div>
+            <label type="text"> Enter your age :</label>
+            <input type="text" id="age" />
+            <input type="button" id="age" value="Submit" onclick="checkAge4()">
+            <div id="msg"></div>
+        </div>
+
+        <div>
+            <p><br />Switch statement</p>
+            <label type="text"> First number :</label>
+            <input type="text" id="number1" />
+            <label type="text"> Second number :</label>
+            <input type="text" id="number2" />
+            <br /><br />
+            <div id="result"></div>
+            <input type="button" value="Add" onclick="doMAth('+');" />
+            <input type="button" value="Substract" onclick="doMAth('-');" />
+            <input type="button" value="Multiply" onclick="doMAth('*');" />
+            <input type="button" value="Divide" onclick="doMAth('/');" />
+            
+        </div>
+
+        <div>
+            <p><br />For loop statement</p>
+        </div>
+    </main>
+</body>
+
+</html>

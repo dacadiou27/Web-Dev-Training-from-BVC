@@ -1,0 +1,33 @@
+
+
+/* Large desktop @media (min-width: 1200px) { ... }
+/* Portrait tablet to landscape and desktop @media (min-width: 768px) and (max-width: 979px) { ... }
+/* Landscape phone to portrait tablet @media (max-width: 767px) { ... }
+/* Landscape phones and down @media (max-width: 480px) { ... }*/
+
+@media screen and (min-width: 1200px){
+
+    body  {
+        background-image: url("../img/Star_small.png");
+        background-size:repeat;
+        background-color:white;
+    }
+}
+
+/*when the screen is between 768 and 1200 px --> change the body as follow*/
+@media (min-width: 768px) and (max-width: 1200px){
+        body  {
+        background-image: url("../img/Star_small.png");
+        background-size:repeat;
+        background-color:white;
+    }
+}
+
+/*when the screen is bellow 767px --> change the body as follow*/
+@media screen and (max-width: 767px){
+    /*NEED HELP - background-color and font color not responding as expected!!!!*/
+
+    body  {
+        background-color:black;
+    }
+}

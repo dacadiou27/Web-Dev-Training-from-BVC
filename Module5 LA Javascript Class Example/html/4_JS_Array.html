@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Date        : -->
+<!--Title       : -->
+<!--Description : -->
+<!--Use "Shift" + "Alt" +"F" to justify evething -->
+<!--Comment Code Block Ctrl+K+C/Ctrl+K+U-->
+
+<head>
+
+    <title>JS Array</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <!-- External set up of style-->
+    <link rel="stylesheet" type="text/css" href="../css/style22.css">
+
+    <!-- Internal set up of style-->
+    <style type="text/css">
+
+    </style>
+
+</head>
+
+<body>
+
+    <h2>JavaScript Array Sort</h2>
+
+    <p>Click the button to sort the array in ascending order.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script type="text/javascript"> // sort by numerical order
+        var points = [40, 100, 1, 5, 25, 10];
+        document.getElementById("demo").innerHTML = points;
+
+        function myFunction() {
+            points.sort(function (a, b) { return a - b });
+            document.getElementById("demo").innerHTML = points;
+        }
+    </script>
+
+    <script type="text/javascript">
+        /*
+            //let book = new Array(); // do not use
+            let book = ["JS", "Eli", 2013];
+            let arraylength = book.length;
+            console.log(book);
+            console.log(arraylength);
+            console.log("Array length is : " + arraylength);
+            console.log("Array length is : " + book.length);
+            book[5] = "Web";
+            console.log(book);
+            console.log(book[4]);
+    
+            book.push(50);
+            console.log(book);
+    
+            book.pop();  // remove the last element '50' which was just added
+            console.log(book);
+    
+            book.unshift("Black"); // add element 'Black' at the beginning of the array
+            console.log(book);
+    
+            book.shift(); // remove first element
+            console.log(book);
+    
+            book.sort();
+            console.log(book);
+        */
+
+        // Splice and Slice metthod in an Array
+
+        let colorArray = ["Red", "Black", "Yellow", "Green", "Pink", "Blue", "Orange", "Brown", "Silver"];
+        console.log(colorArray);
+
+        let newColorArray = colorArray.splice(1, 3, "Gold", "White"); // cut from the 1st tot he 3rd element and past them into the new array & replace the cut area with the 2 new elements
+        console.log(colorArray);
+        console.log(newColorArray);
+
+        let months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July"];
+        console.log(months);
+
+        let monthsSlices = months.slice(0, 3); // create a new array for the 0 to 3rd element , initial array remain unchanged
+        console.log(monthsSlices);
+        console.log(months);
+
+        let months2 = ["Aug", "Sept", "Oct", "Nov", "Dec"];
+        let monthsOfTheYear = months.concat(months2);
+        console.log(monthsOfTheYear);
+        console.log("there is " + monthsOfTheYear.length + " in a Year!");
+
+        let trees = ['spruce', 'pine', 'cedar', 'maple', 'oak', 'birch', 'aspen'];
+        console.log(trees.sort()); // sort by basic alpha nummerical order ["aspen", "birch", "cedar", "maple", "oak", "pine", "spruce"]
+        console.log(trees.sort((a, b) => b - a)); //doesn't sort by basic reverse alpha nummerical order!!!!!!!
+        rtrees = trees.sort();          // Reserve alphabetical order (step 1) sort by basic  alpha nummerical order
+        console.log(rtrees.reverse());  // Reserve alphabetical order (step 2) reverse array ["spruce", "pine", "oak", "maple", "cedar", "birch", "aspen"]
+        
+        console.log(trees.sort((a, b) => a.length - b.length));// sort based on string length ["oak", "pine", "aspen", "birch", "cedar", "maple", "spruce"]
+        console.log(trees.sort((a, b) => b.length - a.length));// sort based on reverse string length ["spruce", "aspen", "birch", "cedar", "maple", "pine", "oak"]
+
+        trees.sort(function (a, b) {
+            a.length - b.length;
+            return b.length - a.length;
+        });
+
+        let numbers = [40, 100, 1, 5, 25, 10];
+        console.log(numbers.sort());  // sort by basic alpha nummerical order [1, 10, 100, 25, 40, 5]
+        console.log(numbers.sort((a, b) => a - b)); // sort by nummerical order [1, 5, 10, 25, 40, 100]
+        console.log(numbers.sort((a, b) => b - a)); // sort by reverse nummerical order [100, 40, 25, 10, 5, 1]
+
+
+        trees.forEach(element => console.log(element)); // go throught the table and list with arrow function
+        //trees.map(element => {                          // iterte throught array but skip undefined elements & return a new array based on transform function
+        //    let Details = LookUpTreeDetails(element);   // need to define LookUpTreeDetails(function)
+        //    return (Details);
+        //});
+
+
+
+
+        let arr = [
+            { Name: "Amelie", Grade: 8 },
+            { Name: "Christopher", Grade: 7 },
+        ]
+        console.log(arr[1].Name); // return the first element of the array and more specificatly the property name of the object
+
+        let arr2 = ['cat', 'dog'];
+        console.log(typeof arr2); // CAUTION Return 'object' NOT 'array'
+        console.log(Array.isArray(arr2)); // Return true
+
+        let book = [
+            { Name: "JS", Author: "Eli" },          // index 0
+            { Name: "C#", Author: "Brook" },        // index 1
+            { Name: "SQL", Author: "Kevin" },       // index 2
+        ]
+        console.log(book);
+        console.log(book[1].Author);
+
+        // Read a about  find - filter - reduce - every - some
+        let numberArray = [2, 45, 6, 7];
+        console.log(numberArray);
+
+        //find
+        const found = numberArray.find(element => element > 10);
+        console.log(found);        // expected output: 45
+
+        //filter
+        const filtered = numberArray.filter(element => element > 5);
+        //const result = words.filter(word => word.length > 6);  // if string more the 6 characters
+        console.log(filtered);        // expected output: [45, 6, 7]
+
+        //reduce
+        const reducer = (accumulator, currentValue) => accumulator + currentValue; // 2 + 45 + 6 + 7
+        console.log(numberArray.reduce(reducer)); //expected output: 60
+
+        //every
+        const testevery10 = numberArray.every(element => element > 10); // expected output: false
+        console.log(testevery10);
+        const testevery1 = numberArray.every(element => element > 1); // expected output: true
+        console.log(testevery1);
+        
+        //some
+        const testsome10 = numberArray.some(element => element > 10); // expected output: true
+        console.log(testsome10);
+        const testsome1 = numberArray.some(element => element > 1); // expected output: true
+        console.log(testsome1);
+
+        // In class activity
+        let arrClass = [1, [7, 9, 6], [10, 20, 30, 40], ['Amlie', 'Roman', 'Tom'], 'Student', 8]
+        //Write a code to display element 40 and 8
+        console.log(arrClass[2][3] + " " + arrClass[5]);
+       //Write a code to display element 9
+        console.log(arrClass[1][1]);
+        //Write a code to display element Tom
+        console.log(arrClass[3][2]);
+        //Write a code to display the length of 3rd element
+        console.log(arrClass[2].length);
+        //Add new element ‘active’ to arr
+        arrClass.push("active");
+        console.log(arrClass);
+        //Remove the first element from arr
+        arrClass.shift();
+        console.log(arrClass);
+        //Concatenate the two arrays to create on new array object and find out the length
+        let arrClass2 = [300, 400, 500, 40]
+        let arrClassAll = arrClass.concat(arrClass2);
+        console.log(arrClassAll);
+        console.log(arrClassAll.length);
+
+    </script>
+
+    <!-- External set up of JS-->
+    <script type="text/javascript" src="../js/js_scripts22.js"></script>
+</body>
+
+</html>

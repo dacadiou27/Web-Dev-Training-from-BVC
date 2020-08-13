@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Date        : -->
+<!--Title       : -->
+<!--Description : -->
+<!--Use "Shift" + "Alt" +"F" to justify evething -->
+
+
+
+<head>
+    <meta charset="UTF-8" />
+
+    <title>JS function</title>
+
+    <style type="text/css">
+
+    </style>
+
+    <!-- External set up of JS-->
+    <!--<script type="text/javascript" src="#"></script>-->
+
+    <script type="text/javascript">
+
+    </script>
+
+</head>
+
+<body>
+
+    <label> Book Name : </label>
+    <input type="text" id="bookName">
+    <br />
+    <label> Author Name : </label>
+    <input type="text" id="bookAuthor">
+    <br />
+    <input type="button" id="button" value="Submit" onclick="displayBookAuthor()" ;>
+
+    <br />
+    <p id="info"> Here is the value :</p>
+
+    <script type="text/javascript">
+
+
+        function book(bookName, bookAuthor) {
+            this.name = bookName;
+            this.author = bookAuthor;
+            this.displayByName = function () {
+                console.log("Book Name: " + this.name + " by " + this.author);
+            }
+        }
+
+        var book1 = new book("bookName", "bookAuthor");
+        var book2 = new book("JS_book", "Dom");
+        book1.displayByName();
+        book2.displayByName();
+
+        function displayBookAuthor() {
+            var bookName = document.getElementById('bookName').value;
+            var bookAuthor = document.getElementById('bookAuthor').value;
+            
+            var book1 = new book(bookName, bookAuthor);
+            var name = book1.name;
+            var author = book1.author;
+
+            //document.getElementById("info").value.innerHTML = info;
+            document.getElementById("info").innerHTML = "Book Name: " + book1.name + " by " + book1.author;
+
+            var book2 = new book(bookName, bookAuthor);
+        }
+
+        console.log(book1.name);
+
+    </script>
+
+
+</body>
+
+</html>
