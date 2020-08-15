@@ -21,53 +21,44 @@
                     getData()
                 })
             " in the script-->
-            <!--
-            <button onclick="getData()">Submit</button>       
-            -->
+            
+            <!--<button onclick="getData()">Submit</button>   -->    
+            
 
             <p id="info"></p>
         </div>
     </div>
     <script>
-
+////////////////////////////////////////////USING Jquery////////////////////////////////////////////////
         /*      
         The Dollar($) Identifier
             The dollar sign is commonly used as a shortcut to the function document.getElementById().Because this function is fairly verbose and used frequently in JavaScript, the $ has long been used as its alias, and many of the libraries available for use with JavaScript create a $() function that references an element from the DOM if you pass it the id of that element.
             There is nothing about $ that requires it to be used this way, however.But it has been the convention, although there is nothing in the language to enforce it.
-    
             The dollar sign $ was chosen for the function name by the first of these libraries because it is a short one - character word, and $ was least likely to be used by itself as a function name and therefore the least likely to clash with other code in the page.
-    
             Now multiple libraries are providing their own version of the $() function, so many now provide the option to turn off that definition in order to avoid clashes.
-    
             Of course, you don't need to use a library to be able to use $(). All you need to substitute $() for document.getElementById() is to add a definition of the $() function to your code as follows: 
-    
             function $(x) { return document.getElementById(x); }
-        
             (3 liked) This Is What JavaScript Is Used ForJavaScript is a core technology enabling websites to interact with visitors and perform complex actions.www.thoughtco.com
         */
-
-        //Jquery
+     
+        /*
         $(() => {
             getData()
         })
 
-        //If calling another function in the same time
-        //$(() => {
-        //    getData()
-        //    postData()
-        //})
-
-        //OR
-        // getData()
-
         function getData() {
             // refer to the list that your definde in the Get from server.js
             $.get("http://localhost:3000/list", (data) => {
-                console.log(data);
             //document.getElementById("info").get("http://localhost:3000/list", (data) => {
                 console.log(data);
+
                 var databody = $('#info').children('databody');
+                //var databody = document.getElementById("info").children('databody');
+                
                 var table = databody.length ? databody : $('#info');
+                //var table = databody.length ? databody : document.getElementById("info");
+
+
                 var table_String = "";
                 for (var i in data) {
                     var playListData = data[i];
@@ -76,6 +67,34 @@
                 table.append(table_String)
             })
         }
+        */
+
+//////////////////////////////////USING JS only////////////////////////////////////////////////
+        
+        var client1 = function(){
+            this.get = function(URL, Callback){
+                var request = new XMLHttpRequest();
+                request.onreadystatechange = function(){
+                    if(request.readyState == 3 && request.status == 200)
+                        Callback(request.response);
+                }
+                request.open("GET", URL, true);
+                request.send(null);
+            }
+        }
+ 
+        var url = "http://localhost:3000/list";
+        var client = new client1();
+        client.get(url, function(res){
+            console.log(res);
+            var response = JSON.parse(res);
+ 
+            for(var i in response) {
+                var playListData = response[i];
+                document.getElementById('info').innerHTML += "<br />" + playListData.PlaylistId + "\t" + playListData.Name;
+            }
+        })
+        
     </script>
 
 </body>
